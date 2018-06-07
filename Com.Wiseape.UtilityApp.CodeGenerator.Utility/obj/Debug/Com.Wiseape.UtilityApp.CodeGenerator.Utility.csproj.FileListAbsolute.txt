@@ -1,0 +1,4 @@
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator.Utility\bin\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Utility.dll
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator.Utility\bin\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Utility.pdb
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator.Utility\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Utility.dll
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator.Utility\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Utility.pdb

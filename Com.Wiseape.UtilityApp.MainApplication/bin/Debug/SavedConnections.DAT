@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfSavedConnection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SavedConnection>
+    <ConnectionName>Com.Wiseape.ERP</ConnectionName>
+    <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=Com.Wiseape.ERP;Persist Security Info=True;User ID=sa;Password=rotikeju98</ConnectionString>
+    <CreatedDate>0001-01-01T00:00:00</CreatedDate>
+  </SavedConnection>
+  <SavedConnection>
+    <ConnectionName>Com.Wiseape.HudaWork</ConnectionName>
+    <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=Com.Wiseape.HudaWork;Persist Security Info=True;User ID=sa;Password=rotikeju98</ConnectionString>
+    <CreatedDate>0001-01-01T00:00:00</CreatedDate>
+  </SavedConnection>
+  <SavedConnection>
+    <ConnectionName>TRAKINDO.BG</ConnectionName>
+    <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=TRAKINDO.BG;Persist Security Info=True;User ID=sa;Password=rotikeju98</ConnectionString>
+    <CreatedDate>0001-01-01T00:00:00</CreatedDate>
+  </SavedConnection>
+  <SavedConnection>
+    <ConnectionName>Com.Wiseape.ERP.ApplicationManager</ConnectionName>
+    <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=Com.Wiseape.ERP.ApplicationManager;User ID=sa;Password=rotikeju98</ConnectionString>
+    <CreatedDate>0001-01-01T00:00:00</CreatedDate>
+  </SavedConnection>
+  <SavedConnection>
+    <ConnectionName>Com.Wiseape.Tools.OAuthServer</ConnectionName>
+    <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=Com.Wiseape.Tools.OAuthServer;Persist Security Info=True;User ID=sa;Password=rotikeju98</ConnectionString>
+    <CreatedDate>0001-01-01T00:00:00</CreatedDate>
+  </SavedConnection>
+  <SavedConnection>
+    <ConnectionName>Com.Wiseape.Common.Resources</ConnectionName>
+    <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=Com.Wiseape.Common.Resources;Persist Security Info=True;User ID=sa;Password=rotikeju98</ConnectionString>
+    <CreatedDate>0001-01-01T00:00:00</CreatedDate>
+  </SavedConnection>
+</ArrayOfSavedConnection>

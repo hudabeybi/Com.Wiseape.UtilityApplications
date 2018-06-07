@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<SessionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sessions>
+    <SavedSession>
+      <ConfigFile>D:\Source Codes\Com.Wiseape\Com.Wiseape.ERP\Com.Wiseape.ERP.HR\Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.Validator.Config.XML</ConfigFile>
+      <SessionName>Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.Validator.Config.XML</SessionName>
+      <CreatedDate>2017-12-06T17:05:56.3123387+07:00</CreatedDate>
+    </SavedSession>
+    <SavedSession>
+      <ConfigFile>D:\Source Codes\Com.Wiseape\Com.Wiseape.ERP\Com.Wiseape.ERP.HR\Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.Business.Config.XML</ConfigFile>
+      <SessionName>Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.Business.Config.XML</SessionName>
+      <CreatedDate>2017-12-06T19:23:41.6599134+07:00</CreatedDate>
+    </SavedSession>
+    <SavedSession>
+      <ConfigFile>D:\Source Codes\Com.Wiseape\Com.Wiseape.ERP\Com.Wiseape.ERP.HR\Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.Repository.Config.XML</ConfigFile>
+      <SessionName>Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.Repository.Config.XML</SessionName>
+      <CreatedDate>2017-12-06T19:26:56.3338115+07:00</CreatedDate>
+    </SavedSession>
+    <SavedSession>
+      <ConfigFile>D:\Source Codes\Com.Wiseape\Com.Wiseape.ERP\Com.Wiseape.ERP.HR\Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.DataContext.Config.XML</ConfigFile>
+      <SessionName>Com.Wiseape.ERP.HR.Webservice\Resources\Config\Factory.DataContext.Config.XML</SessionName>
+      <CreatedDate>2017-12-07T09:03:56.8940493+07:00</CreatedDate>
+    </SavedSession>
+    <SavedSession>
+      <ConfigFile>D:\Source Codes\Com.Wiseape\Com.Wiseape.ERP\Com.Wiseape.ERP.ApplicationManager\Com.Wiseape.ERP.ApplicationManager.Webservice\Resources\Config\Factory.Business.Config.XML</ConfigFile>
+      <SessionName>Application Manager Business</SessionName>
+      <CreatedDate>2018-04-24T17:54:36.1674358+07:00</CreatedDate>
+    </SavedSession>
+    <SavedSession>
+      <ConfigFile>D:\Source Codes\Com.Wiseape\Com.Wiseape.Tools\Com.Wiseape.Tools.OAuthServerManager\Com.Wiseape.Tools.OAuthServerManager.Webservice\Resources\Config\Factory.Business.Config.XML</ConfigFile>
+      <SessionName>Wiseape Tools OAuthServer</SessionName>
+      <CreatedDate>2018-04-24T17:55:44.5854643+07:00</CreatedDate>
+    </SavedSession>
+  </Sessions>
+</SessionList>

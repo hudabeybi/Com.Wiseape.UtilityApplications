@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{199252FE-00E7-4D26-8A3F-29428075A078}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Wiseape.UtilityApp.CodeGenerator</RootNamespace>
+    <AssemblyName>Com.Wiseape.UtilityApp.CodeGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastColoredTextBox, Version=2.16.21.0, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
+      <HintPath>..\Com.Wiseape.FactoryConfigurator\Com.Wiseape.UtilityApp.FactoryConfigurator\packages\FCTB.2.16.21.0\lib\FastColoredTextBox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f4ca07f51760da93, processorArchitecture=MSIL">
+      <HintPath>..\Com.Wiseape.FactoryConfigurator\Com.Wiseape.UtilityApp.FactoryConfigurator\packages\DataConnectionDialog.1.2\lib\Microsoft.Data.ConnectionUI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI.Dialog, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f4ca07f51760da93, processorArchitecture=MSIL">
+      <HintPath>..\Com.Wiseape.FactoryConfigurator\Com.Wiseape.UtilityApp.FactoryConfigurator\packages\DataConnectionDialog.1.2\lib\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Com.Wiseape.FactoryConfigurator\Com.Wiseape.UtilityApp.FactoryConfigurator\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CodeCompiler.cs" />
+    <Compile Include="Business\IModelTypeConfigurator.cs" />
+    <Compile Include="Business\IConfigContent.cs" />
+    <Compile Include="Business\SqlServerSchema.cs" />
+    <Compile Include="Ctrls\CheckboxesConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\CheckboxesConfigurator.Designer.cs">
+      <DependentUpon>CheckboxesConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ComboboxConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ComboboxConfigurator.Designer.cs">
+      <DependentUpon>ComboboxConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\DateConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\DateConfigurator.Designer.cs">
+      <DependentUpon>DateConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ElementPadCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ElementPadCtrl.Designer.cs">
+      <DependentUpon>ElementPadCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\CheckboxGroupDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\CheckboxGroupDrawer.Designer.cs">
+      <DependentUpon>CheckboxGroupDrawer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\CheckboxPropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\CommonPropertyConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\CommonPropertyConfigurator.Designer.cs">
+      <DependentUpon>CommonPropertyConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\DatetimeDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\DatetimeDrawer.Designer.cs">
+      <DependentUpon>DatetimeDrawer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\DatetimePropertyConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\DateTimePropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\ElementLayoutDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\ElementLayoutDesigner.Designer.cs">
+      <DependentUpon>ElementLayoutDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormElementConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormElementConfiguration.Designer.cs">
+      <DependentUpon>FormElementConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormTableRow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormTableRow.Designer.cs">
+      <DependentUpon>FormTableRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\IElementConfigurator.cs" />
+    <Compile Include="Ctrls\Elements\IElementDesignDrawer.cs" />
+    <Compile Include="Ctrls\Elements\IElementDesigner.cs" />
+    <Compile Include="Ctrls\Elements\IPropertyControl.cs" />
+    <Compile Include="Ctrls\Elements\PropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\RadioGroupDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\RadioGroupDrawer.Designer.cs">
+      <DependentUpon>RadioGroupDrawer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\RadioGroupPropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\SelectBoxConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\SelectBoxDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\SelectBoxDrawer.Designer.cs">
+      <DependentUpon>SelectBoxDrawer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\SelectBoxPropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\SelectDynamicValueCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\SelectDynamicValueCtrl.Designer.cs">
+      <DependentUpon>SelectDynamicValueCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\SelectStaticValueCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\SelectStaticValueCtrl.Designer.cs">
+      <DependentUpon>SelectStaticValueCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TableCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TableCell.Designer.cs">
+      <DependentUpon>TableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TableRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TableRow.Designer.cs">
+      <DependentUpon>TableRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TextAreaConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TextboxConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TextAreaDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TextboxDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TextboxDrawer.Designer.cs">
+      <DependentUpon>TextboxDrawer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TextareaPropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\TextboxPropertyPage.cs" />
+    <Compile Include="Ctrls\FileConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\FileConfigurator.Designer.cs">
+      <DependentUpon>FileConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\FormLogicConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\FormLogicConfig.Designer.cs">
+      <DependentUpon>FormLogicConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\FormUIConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\FormUIConfig.Designer.cs">
+      <DependentUpon>FormUIConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\FunctionConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\FunctionConfigurator.Designer.cs">
+      <DependentUpon>FunctionConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ImageConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ImageConfigurator.Designer.cs">
+      <DependentUpon>ImageConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ItemOption.cs" />
+    <Compile Include="Ctrls\LookupCheckboxesConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\LookupCheckboxesConfigurator.Designer.cs">
+      <DependentUpon>LookupCheckboxesConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\LookupComboboxConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\LookupComboboxConfigurator.Designer.cs">
+      <DependentUpon>LookupComboboxConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\LookupRadiobuttonsConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\LookupRadiobuttonsConfigurator.Designer.cs">
+      <DependentUpon>LookupRadiobuttonsConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\NumericboxConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\NumericboxConfiguration.Designer.cs">
+      <DependentUpon>NumericboxConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\RadiobuttonsConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\RadiobuttonsConfigurator.Designer.cs">
+      <DependentUpon>RadiobuttonsConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\TextareaConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\TextareaConfiguration.Designer.cs">
+      <DependentUpon>TextareaConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\TextboxConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\TextboxConfiguration.Designer.cs">
+      <DependentUpon>TextboxConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddCodeTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCodeTemplate.Designer.cs">
+      <DependentUpon>FormAddCodeTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddConnection.Designer.cs">
+      <DependentUpon>FormAddConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddGroup.Designer.cs">
+      <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCodeResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCodeResult.Designer.cs">
+      <DependentUpon>FormCodeResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCodeTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCodeTemplate.Designer.cs">
+      <DependentUpon>FormCodeTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreateModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateModule.Designer.cs">
+      <DependentUpon>FormCreateModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateProject.Designer.cs">
+      <DependentUpon>FormCreateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProject.Designer.cs">
+      <DependentUpon>FormProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSavePath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSavePath.Designer.cs">
+      <DependentUpon>FormSavePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisualDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisualDesigner.Designer.cs">
+      <DependentUpon>FormVisualDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTypeConfigurator\DataValidatorConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModelTypeConfigurator\DataValidatorConfigurator.Designer.cs">
+      <DependentUpon>DataValidatorConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\FormValidatorConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\FormValidatorConfig.Designer.cs">
+      <DependentUpon>FormValidatorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\IAssemblyNameGenerator.cs" />
+    <Compile Include="ModelTypeConfigurator\LogicConfiguratorModelType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModelTypeConfigurator\LogicConfiguratorModelType.Designer.cs">
+      <DependentUpon>LogicConfiguratorModelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTypeConfigurator\UIConfiguratorModelType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModelTypeConfigurator\UIConfiguratorModelType.Designer.cs">
+      <DependentUpon>UIConfiguratorModelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ValidationIsEmpty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ValidationIsEmpty.Designer.cs">
+      <DependentUpon>ValidationIsEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ValidationNumericMinMax.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ValidationNumericMinMax.Designer.cs">
+      <DependentUpon>ValidationNumericMinMax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\ValidationStringMinMaxLength.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\ValidationStringMinMaxLength.Designer.cs">
+      <DependentUpon>ValidationStringMinMaxLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CodeGeneratorSession.cs" />
+    <Compile Include="Model\CodeTemplate.cs" />
+    <Compile Include="Model\CodeTemplateFile.cs" />
+    <Compile Include="Model\CodeTemplateGroup.cs" />
+    <Compile Include="Model\DataSourceLogicTable.cs" />
+    <Compile Include="Model\DataSourceUITable.cs" />
+    <Compile Include="Model\CodeGeneratorModule.cs" />
+    <Compile Include="Model\CodeGeneratorProject.cs" />
+    <Compile Include="Model\DataColumn.cs" />
+    <Compile Include="Model\DataRepository.cs" />
+    <Compile Include="Model\DataSourceValidationTable.cs" />
+    <Compile Include="Model\DataTable.cs" />
+    <Compile Include="Model\FunctionParameter.cs" />
+    <Compile Include="Model\LogicColumn.cs" />
+    <Compile Include="Model\ModelItemType.cs" />
+    <Compile Include="Model\ModelType.cs" />
+    <Compile Include="Model\RepositoryFunction.cs" />
+    <Compile Include="Model\SavedConnection.cs" />
+    <Compile Include="Model\UIColumn.cs" />
+    <Compile Include="Model\ValidatorColumn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Ctrls\CheckboxesConfigurator.resx">
+      <DependentUpon>CheckboxesConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ComboboxConfigurator.resx">
+      <DependentUpon>ComboboxConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\DateConfigurator.resx">
+      <DependentUpon>DateConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ElementPadCtrl.resx">
+      <DependentUpon>ElementPadCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\CheckboxGroupDrawer.resx">
+      <DependentUpon>CheckboxGroupDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\CommonPropertyConfigurator.resx">
+      <DependentUpon>CommonPropertyConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\DatetimeDrawer.resx">
+      <DependentUpon>DatetimeDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\DatetimePropertyConfigurator.resx">
+      <DependentUpon>DatetimePropertyConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\ElementLayoutDesigner.resx">
+      <DependentUpon>ElementLayoutDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\FormElementConfiguration.resx">
+      <DependentUpon>FormElementConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\FormTableRow.resx">
+      <DependentUpon>FormTableRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\RadioGroupDrawer.resx">
+      <DependentUpon>RadioGroupDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\SelectBoxConfigurator.resx">
+      <DependentUpon>SelectBoxConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\SelectBoxDrawer.resx">
+      <DependentUpon>SelectBoxDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\SelectDynamicValueCtrl.resx">
+      <DependentUpon>SelectDynamicValueCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\SelectStaticValueCtrl.resx">
+      <DependentUpon>SelectStaticValueCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TableCell.resx">
+      <DependentUpon>TableCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TableRow.resx">
+      <DependentUpon>TableRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TextAreaConfigurator.resx">
+      <DependentUpon>TextAreaConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TextboxConfigurator.resx">
+      <DependentUpon>TextboxConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TextAreaDrawer.resx">
+      <DependentUpon>TextAreaDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TextboxDrawer.resx">
+      <DependentUpon>TextboxDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\FileConfigurator.resx">
+      <DependentUpon>FileConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\FormLogicConfig.resx">
+      <DependentUpon>FormLogicConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\FormUIConfig.resx">
+      <DependentUpon>FormUIConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\FunctionConfigurator.resx">
+      <DependentUpon>FunctionConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ImageConfigurator.resx">
+      <DependentUpon>ImageConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\LookupCheckboxesConfigurator.resx">
+      <DependentUpon>LookupCheckboxesConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\LookupComboboxConfigurator.resx">
+      <DependentUpon>LookupComboboxConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\LookupRadiobuttonsConfigurator.resx">
+      <DependentUpon>LookupRadiobuttonsConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\NumericboxConfiguration.resx">
+      <DependentUpon>NumericboxConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\RadiobuttonsConfigurator.resx">
+      <DependentUpon>RadiobuttonsConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\TextareaConfiguration.resx">
+      <DependentUpon>TextareaConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\TextboxConfiguration.resx">
+      <DependentUpon>TextboxConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddCodeTemplate.resx">
+      <DependentUpon>FormAddCodeTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddConnection.resx">
+      <DependentUpon>FormAddConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddGroup.resx">
+      <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCodeResult.resx">
+      <DependentUpon>FormCodeResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCodeTemplate.resx">
+      <DependentUpon>FormCodeTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateModule.resx">
+      <DependentUpon>FormCreateModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateProject.resx">
+      <DependentUpon>FormCreateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProject.resx">
+      <DependentUpon>FormProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSavePath.resx">
+      <DependentUpon>FormSavePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisualDesigner.resx">
+      <DependentUpon>FormVisualDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelTypeConfigurator\DataValidatorConfigurator.resx">
+      <DependentUpon>DataValidatorConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\FormValidatorConfig.resx">
+      <DependentUpon>FormValidatorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelTypeConfigurator\LogicConfiguratorModelType.resx">
+      <DependentUpon>LogicConfiguratorModelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelTypeConfigurator\UIConfiguratorModelType.resx">
+      <DependentUpon>UIConfiguratorModelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ValidationIsEmpty.resx">
+      <DependentUpon>ValidationIsEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ValidationNumericMinMax.resx">
+      <DependentUpon>ValidationNumericMinMax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\ValidationStringMinMaxLength.resx">
+      <DependentUpon>ValidationStringMinMaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Code Generator.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CodeEditor\Src\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj">
+      <Project>{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CodeEditor\Src\TextEditor\TextEditor.csproj">
+      <Project>{9dae91c2-4eb1-4e50-89da-ddd0537d8f97}</Project>
+      <Name>TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Com.Wiseape.Library\Com.Wiseape.Utility\Com.Wiseape.Utility.csproj">
+      <Project>{810642a3-d345-4864-b6f7-1eb04c2b06cf}</Project>
+      <Name>Com.Wiseape.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AspCompiler\AspCompiler.csproj">
+      <Project>{bc16706f-8728-4661-8410-5e1814878f17}</Project>
+      <Name>AspCompiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Wiseape.UtilityApp.CodeGenerator.Utility\Com.Wiseape.UtilityApp.CodeGenerator.Helper.csproj">
+      <Project>{55643a8a-1781-4e08-839d-6a999eb5d753}</Project>
+      <Name>Com.Wiseape.UtilityApp.CodeGenerator.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\type-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\type-box %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\combo-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radio-button-group.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

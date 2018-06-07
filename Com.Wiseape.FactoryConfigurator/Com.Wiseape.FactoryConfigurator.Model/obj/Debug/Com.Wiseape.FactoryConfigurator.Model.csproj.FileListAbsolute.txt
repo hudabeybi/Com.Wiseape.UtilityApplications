@@ -1,0 +1,5 @@
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.FactoryConfigurator\Com.Wiseape.FactoryConfigurator.Model\bin\Debug\Com.Wiseape.FactoryConfigurator.Model.dll
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.FactoryConfigurator\Com.Wiseape.FactoryConfigurator.Model\bin\Debug\Com.Wiseape.FactoryConfigurator.Model.pdb
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.FactoryConfigurator\Com.Wiseape.FactoryConfigurator.Model\obj\Debug\Com.Wiseape.FactoryConfigurator.Model.dll
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.FactoryConfigurator\Com.Wiseape.FactoryConfigurator.Model\obj\Debug\Com.Wiseape.FactoryConfigurator.Model.pdb
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.FactoryConfigurator\Com.Wiseape.FactoryConfigurator.Model\obj\Debug\Com.Wiseape.FactoryConfigurator.Model.csprojResolveAssemblyReference.cache

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfFactoryConfigurationItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FactoryConfigurationItem>
+    <Key>HR.Employee</Key>
+    <DllName>Com.Wiseape.HR.View.Service.dll</DllName>
+    <ClassName>Com.Wiseape.HR.View.Service.Validator.EmployeeValidator</ClassName>
+    <ClassInfo>dsfasdfasd</ClassInfo>
+  </FactoryConfigurationItem>
+  <FactoryConfigurationItem>
+    <Key>HR.Family</Key>
+    <DllName>Com.Wiseape.HR.View.Service.dll</DllName>
+    <ClassName>Com.Wiseape.HR.View.Service.Validator.FamilyValidator</ClassName>
+    <ClassInfo>dasfasd3</ClassInfo>
+  </FactoryConfigurationItem>
+  <FactoryConfigurationItem>
+    <Key>HR.JobExperience</Key>
+    <DllName>Com.Wiseape.HR.View.Service.dll</DllName>
+    <ClassName>Com.Wiseape.HR.View.Service.Validator.JobExperienceValidator</ClassName>
+    <ClassInfo>sdfsdfsdf</ClassInfo>
+  </FactoryConfigurationItem>
+</ArrayOfFactoryConfigurationItem>

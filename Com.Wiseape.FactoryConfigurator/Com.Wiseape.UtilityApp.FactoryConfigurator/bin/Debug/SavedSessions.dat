@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-16"?>
+<SessionList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sessions>
+    <SavedSession>
+      <ConfigFile>D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.FactoryConfigurator\Com.Wiseape.UtilityApp.FactoryConfigurator\bin\Debug/test.dat</ConfigFile>
+      <SessionName>Test</SessionName>
+      <CreatedDate>2017-11-04T02:51:41.3272047+07:00</CreatedDate>
+    </SavedSession>
+  </Sessions>
+</SessionList>

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.CodeGeneratorModule">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACEAAEAAAAAAAAAgAAAIgACAAABAAAAAAA=</HashCode>
+      <FileName>Model\CodeGeneratorModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.CodeGeneratorProject">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAACBAAAAAQAAACAAAAIAAAACAAAAA=</HashCode>
+      <FileName>Model\CodeGeneratorProject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.CodeGeneratorSession">
+    <Position X="5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACEAAAACAAAACAAAAAAIAACAAAAIAAAAAA=</HashCode>
+      <FileName>Model\CodeGeneratorSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataColumn">
+    <Position X="10.25" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAAQIAgARACABAgAAAAAAEIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\DataColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataRepository">
+    <Position X="7.5" Y="11" Width="1.5" />
+    <InheritanceLine Type="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataColumn" ManuallyRouted="true">
+      <Path>
+        <Point X="10.88" Y="4.478" />
+        <Point X="10.88" Y="5.253" />
+        <Point X="8.25" Y="5.253" />
+        <Point X="8.25" Y="11" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAEAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\DataRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataSourceTable">
+    <Position X="1.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAgAAAAAAAAAAAIAAACAAAASAAAAA=</HashCode>
+      <FileName>Model\DataTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataSourceLogicTable">
+    <Position X="0.5" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Model\DataSourceLogicTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataSourceUITable">
+    <Position X="3" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Model\DataSourceUITable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataSourceValidationTable">
+    <Position X="5.25" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Model\DataSourceValidationTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.FunctionParameter">
+    <Position X="5.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\FunctionParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.LogicColumn">
+    <Position X="9.5" Y="11" Width="1.5" />
+    <InheritanceLine Type="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataColumn" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.625" Y="4.478" />
+        <Point X="11.625" Y="5.503" />
+        <Point X="10.125" Y="5.503" />
+        <Point X="10.125" Y="11" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIAAAgAAABAAACAAAAAAAAAAAgAIAgAAAEAAA=</HashCode>
+      <FileName>Model\LogicColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.ModelItemType">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ModelItemType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.ModelType">
+    <Position X="18" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAhA=</HashCode>
+      <FileName>Model\ModelType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.RepositoryFunction">
+    <Position X="14.25" Y="6.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.RepositoryFunction.CompareType">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\RepositoryFunction.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAQCAAAA=</HashCode>
+      <FileName>Model\RepositoryFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.SavedConnection">
+    <Position X="16.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiAAAAEAAAA=</HashCode>
+      <FileName>Model\SavedConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.UIColumn">
+    <Position X="11.75" Y="10" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.UIColumn.ControlType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\UIColumn.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIABAAAEAAAAAAAAAAAAAAAAAEBAAACAAAAAAAACAA=</HashCode>
+      <FileName>Model\UIColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Wiseape.UtilityApp.CodeGenerator.Model.ValidatorColumn">
+    <Position X="14.5" Y="10.5" Width="1.5" />
+    <InheritanceLine Type="Com.Wiseape.UtilityApp.CodeGenerator.Model.DataColumn" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.625" Y="4.478" />
+        <Point X="11.625" Y="4.589" />
+        <Point X="12.256" Y="4.589" />
+        <Point X="12.256" Y="4.814" />
+        <Point X="12.167" Y="4.814" />
+        <Point X="12.167" Y="5.495" />
+        <Point X="13.056" Y="5.495" />
+        <Point X="13.056" Y="9.625" />
+        <Point X="16.375" Y="9.625" />
+        <Point X="16.375" Y="11.438" />
+        <Point X="16" Y="11.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Model\ValidatorColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
