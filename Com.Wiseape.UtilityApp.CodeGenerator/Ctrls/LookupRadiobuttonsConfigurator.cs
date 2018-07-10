@@ -41,7 +41,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "LookupRadiobuttons";
+            return ControlType.LookupRadiobuttons.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

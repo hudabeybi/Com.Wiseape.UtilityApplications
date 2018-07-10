@@ -45,7 +45,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "LookupCombobox";
+            return ControlType.LookupCombobox.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

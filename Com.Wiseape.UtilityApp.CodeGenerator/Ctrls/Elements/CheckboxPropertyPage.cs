@@ -19,18 +19,25 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Properties.Add("QueryOrUrl", "");
             this.Properties.Add("Items", new Dictionary<string, string>());
 
-            this.Drawer = new CheckboxGroupDrawer();
-            this.PropertyConfigurator = new SelectBoxConfigurator();
+            this.Drawer = new CheckboxGroupDrawer(this);
+            this.PropertyConfigurator = new SelectBoxConfigurator(this);
         }
 
-        public override PropertyPage CreateNew()
+        public override PropertyPage CreateNew(int idx = 0)
         {
-            return new CheckboxPropertyPage();
+            PropertyPage pg = new CheckboxPropertyPage();
+            pg.Properties["ID"] = "checkbox" + idx;
+            return pg;
         }
 
         public override string GetElementName()
         {
             return "Checkbox Group";
+        }
+
+        public override string GetElementID()
+        {
+            return Settings.Default.CHECKBOXGROUP;
         }
 
         public override Image GetIcon()

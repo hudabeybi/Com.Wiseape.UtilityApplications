@@ -30,4 +30,9 @@
     <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=Com.Wiseape.Common.Resources;Persist Security Info=True;User ID=sa;Password=rotikeju98</ConnectionString>
     <CreatedDate>0001-01-01T00:00:00</CreatedDate>
   </SavedConnection>
+  <SavedConnection>
+    <ConnectionName>Trakindo.ItResource</ConnectionName>
+    <ConnectionString>Data Source=IFORCE-HUDA;Initial Catalog=TRAKINDO.ITRESOURCES;User ID=sa;Password=rotikeju98</ConnectionString>
+    <CreatedDate>0001-01-01T00:00:00</CreatedDate>
+  </SavedConnection>
 </ArrayOfSavedConnection>

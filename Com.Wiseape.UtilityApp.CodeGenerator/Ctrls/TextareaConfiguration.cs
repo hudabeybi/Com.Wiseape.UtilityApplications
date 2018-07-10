@@ -41,7 +41,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "Textarea/Html Editor";
+            return ControlType.Textarea.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

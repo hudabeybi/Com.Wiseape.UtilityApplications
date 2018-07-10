@@ -83,9 +83,49 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cloud_upload_arrow {
+            get {
+                object obj = ResourceManager.GetObject("cloud_upload_arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap combo_box {
             get {
                 object obj = ResourceManager.GetObject("combo_box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grid_on {
+            get {
+                object obj = ResourceManager.GetObject("grid_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap painting_palette {
+            get {
+                object obj = ResourceManager.GetObject("painting_palette", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +166,16 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Properties {
         internal static System.Drawing.Bitmap type_box__1_ {
             get {
                 object obj = ResourceManager.GetObject("type-box (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap web_tabs {
+            get {
+                object obj = ResourceManager.GetObject("web_tabs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

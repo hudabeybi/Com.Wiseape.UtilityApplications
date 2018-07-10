@@ -11,12 +11,12 @@ using System.Windows.Forms;
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
     [Serializable]
-    public partial class TextAreaDrawer : UserControl, IElementDesignDrawer
+    public partial class TextAreaDrawer : BaseDrawer, IElementDesignDrawer
     {
         private Label lblLAbel;
         private TextBox textBox1;
 
-        public TextAreaDrawer()
+        public TextAreaDrawer(PropertyPage page) : base(page)
         {
             InitializeComponent();
         }
@@ -25,8 +25,8 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             if (properties.ContainsKey("Label"))
                 this.lblLAbel.Text = properties["Label"].ToString();
-            if (properties.ContainsKey("DefaultValue"))
-                this.textBox1.Text = properties["DefaultValue"].ToString();
+            if (properties.ContainsKey("Placeholder"))
+                this.textBox1.Text = properties["Placeholder"].ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -47,6 +47,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // textBox1
             // 
+            this.textBox1.ForeColor = System.Drawing.Color.Silver;
             this.textBox1.Location = new System.Drawing.Point(19, 25);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";

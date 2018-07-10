@@ -35,9 +35,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
             txtPasswordChar.Text = Convert.ToString(configs["PasswordChar"]);
         }
 
-        public string GetControlType()
+        public virtual string GetControlType()
         {
-            return "Textbox";
+            return ControlType.Textbox.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

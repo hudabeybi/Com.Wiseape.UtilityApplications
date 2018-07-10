@@ -40,6 +40,8 @@
             this.txtLabel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDataField = new System.Windows.Forms.TextBox();
+            this.lblPlaceholder = new System.Windows.Forms.Label();
+            this.txtPlaceholder = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(417, 5);
+            this.label2.Location = new System.Drawing.Point(14, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 1;
@@ -63,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 93);
+            this.label3.Location = new System.Drawing.Point(417, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 2;
@@ -80,7 +82,7 @@
             // txtClass
             // 
             this.txtClass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtClass.Location = new System.Drawing.Point(17, 106);
+            this.txtClass.Location = new System.Drawing.Point(422, 62);
             this.txtClass.Name = "txtClass";
             this.txtClass.Size = new System.Drawing.Size(390, 20);
             this.txtClass.TabIndex = 4;
@@ -88,7 +90,7 @@
             // txtStyle
             // 
             this.txtStyle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStyle.Location = new System.Drawing.Point(421, 19);
+            this.txtStyle.Location = new System.Drawing.Point(17, 62);
             this.txtStyle.Name = "txtStyle";
             this.txtStyle.Size = new System.Drawing.Size(390, 20);
             this.txtStyle.TabIndex = 5;
@@ -96,7 +98,7 @@
             // txtDefaultValue
             // 
             this.txtDefaultValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDefaultValue.Location = new System.Drawing.Point(422, 62);
+            this.txtDefaultValue.Location = new System.Drawing.Point(17, 106);
             this.txtDefaultValue.Name = "txtDefaultValue";
             this.txtDefaultValue.Size = new System.Drawing.Size(390, 20);
             this.txtDefaultValue.TabIndex = 6;
@@ -104,7 +106,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(417, 48);
+            this.label4.Location = new System.Drawing.Point(12, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 7;
@@ -113,7 +115,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 45);
+            this.label5.Location = new System.Drawing.Point(419, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 8;
@@ -122,10 +124,11 @@
             // txtLabel
             // 
             this.txtLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLabel.Location = new System.Drawing.Point(15, 60);
+            this.txtLabel.Location = new System.Drawing.Point(422, 19);
             this.txtLabel.Name = "txtLabel";
             this.txtLabel.Size = new System.Drawing.Size(390, 20);
             this.txtLabel.TabIndex = 9;
+            this.txtLabel.TextChanged += new System.EventHandler(this.txtLabel_TextChanged);
             // 
             // label6
             // 
@@ -144,10 +147,29 @@
             this.txtDataField.Size = new System.Drawing.Size(390, 20);
             this.txtDataField.TabIndex = 10;
             // 
-            // CommonPropertyControl
+            // lblPlaceholder
+            // 
+            this.lblPlaceholder.AutoSize = true;
+            this.lblPlaceholder.Location = new System.Drawing.Point(12, 134);
+            this.lblPlaceholder.Name = "lblPlaceholder";
+            this.lblPlaceholder.Size = new System.Drawing.Size(63, 13);
+            this.lblPlaceholder.TabIndex = 13;
+            this.lblPlaceholder.Text = "Placeholder";
+            // 
+            // txtPlaceholder
+            // 
+            this.txtPlaceholder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlaceholder.Location = new System.Drawing.Point(17, 148);
+            this.txtPlaceholder.Name = "txtPlaceholder";
+            this.txtPlaceholder.Size = new System.Drawing.Size(390, 20);
+            this.txtPlaceholder.TabIndex = 12;
+            // 
+            // CommonPropertyConfigurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblPlaceholder);
+            this.Controls.Add(this.txtPlaceholder);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDataField);
             this.Controls.Add(this.txtLabel);
@@ -160,8 +182,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "CommonPropertyControl";
-            this.Size = new System.Drawing.Size(827, 138);
+            this.Name = "CommonPropertyConfigurator";
+            this.Size = new System.Drawing.Size(827, 188);
             this.Load += new System.EventHandler(this.CommonPropertyControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,5 +204,7 @@
         public System.Windows.Forms.TextBox txtLabel;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtDataField;
+        public System.Windows.Forms.Label lblPlaceholder;
+        public System.Windows.Forms.TextBox txtPlaceholder;
     }
 }

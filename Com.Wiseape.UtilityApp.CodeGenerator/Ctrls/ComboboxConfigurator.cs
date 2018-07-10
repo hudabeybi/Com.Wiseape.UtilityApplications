@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Com.Wiseape.UtilityApp.CodeGenerator.Business;
 using Com.Wiseape.UtilityApp.CodeGenerator.Model;
+using System.Collections;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 {
@@ -44,13 +45,26 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
         {
             txtPlaceholder.Text = Convert.ToString(configs["Placeholder"]);
             txtDefaultValue.Text = Convert.ToString(configs["DefaultValue"]);
-            List<ItemOption> options = (List<ItemOption>)configs["Options"];
+            List<ItemOption> options = null;
+
+            if(configs["Options"].GetType() == typeof(ArrayList))
+            {
+                ArrayList list = (ArrayList)configs["Options"];
+                options = new List<ItemOption>();
+                foreach(Dictionary<string, object> opt in list)
+                {
+                    options.Add(new ItemOption(opt["Value"].ToString(), opt["Text"].ToString() ));
+                }
+            }
+            else
+                options = (List<ItemOption>)configs["Options"];
+
             gridOptions.DataSource = options;
         }
 
         public string GetControlType()
         {
-            return "Combobox";
+            return ControlType.Combobox.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

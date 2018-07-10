@@ -19,18 +19,25 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Properties.Add("QueryOrUrl", "");
             this.Properties.Add("Items", new Dictionary<string, string>());
 
-            this.Drawer = new SelectBoxDrawer();
-            this.PropertyConfigurator = new SelectBoxConfigurator();
+            this.Drawer = new SelectBoxDrawer(this);
+            this.PropertyConfigurator = new SelectBoxConfigurator(this);
         }
 
-        public override PropertyPage CreateNew()
+        public override PropertyPage CreateNew(int idx = 0)
         {
-            return new SelectBoxPropertyPage();
+            PropertyPage p = new SelectBoxPropertyPage();
+            p.Properties["ID"] = "selectBox" + idx;
+            return p;
         }
 
         public override string GetElementName()
         {
             return "Select Box";
+        }
+
+        public override string GetElementID()
+        {
+            return Settings.Default.SELECTBOX;
         }
 
         public override Image GetIcon()

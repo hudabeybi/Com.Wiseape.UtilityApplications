@@ -18,6 +18,11 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             InitializeComponent();
         }
 
+        public DatetimePropertyConfigurator(PropertyPage propertyPage) : base(propertyPage)
+        {
+            InitializeComponent();
+        }
+
         private void InitializeComponent()
         {
             this.txtDateFormat = new System.Windows.Forms.TextBox();
@@ -28,7 +33,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // txtDateFormat
             // 
-            this.txtDateFormat.Location = new System.Drawing.Point(17, 182);
+            this.txtDateFormat.Location = new System.Drawing.Point(17, 223);
             this.txtDateFormat.Name = "txtDateFormat";
             this.txtDateFormat.Size = new System.Drawing.Size(273, 20);
             this.txtDateFormat.TabIndex = 14;
@@ -36,7 +41,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 167);
+            this.label7.Location = new System.Drawing.Point(16, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 13;
@@ -45,7 +50,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkWithTime
             // 
             this.chkWithTime.AutoSize = true;
-            this.chkWithTime.Location = new System.Drawing.Point(17, 147);
+            this.chkWithTime.Location = new System.Drawing.Point(17, 188);
             this.chkWithTime.Name = "chkWithTime";
             this.chkWithTime.Size = new System.Drawing.Size(83, 17);
             this.chkWithTime.TabIndex = 12;
@@ -55,7 +60,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkDateRange
             // 
             this.chkDateRange.AutoSize = true;
-            this.chkDateRange.Location = new System.Drawing.Point(17, 223);
+            this.chkDateRange.Location = new System.Drawing.Point(17, 264);
             this.chkDateRange.Name = "chkDateRange";
             this.chkDateRange.Size = new System.Drawing.Size(84, 17);
             this.chkDateRange.TabIndex = 15;
@@ -70,8 +75,10 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Controls.Add(this.label7);
             this.Controls.Add(this.chkWithTime);
             this.Name = "DatetimePropertyConfigurator";
-            this.Size = new System.Drawing.Size(827, 254);
+            this.Size = new System.Drawing.Size(827, 324);
             this.Load += new System.EventHandler(this.DatetimePropertyConfigurator_Load);
+            this.Controls.SetChildIndex(this.txtPlaceholder, 0);
+            this.Controls.SetChildIndex(this.lblPlaceholder, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);

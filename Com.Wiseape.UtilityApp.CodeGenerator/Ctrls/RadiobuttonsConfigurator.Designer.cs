@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gridOptions = new System.Windows.Forms.DataGridView();
-            this.ColValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDefaultValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ColValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridOptions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,18 +47,6 @@
             this.gridOptions.Name = "gridOptions";
             this.gridOptions.Size = new System.Drawing.Size(453, 127);
             this.gridOptions.TabIndex = 14;
-            // 
-            // ColValue
-            // 
-            this.ColValue.HeaderText = "Value";
-            this.ColValue.Name = "ColValue";
-            this.ColValue.Width = 200;
-            // 
-            // ColText
-            // 
-            this.ColText.HeaderText = "Text";
-            this.ColText.Name = "ColText";
-            this.ColText.Width = 200;
             // 
             // label1
             // 
@@ -85,6 +73,20 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Default Value";
             // 
+            // ColValue
+            // 
+            this.ColValue.DataPropertyName = "Value";
+            this.ColValue.HeaderText = "Value";
+            this.ColValue.Name = "ColValue";
+            this.ColValue.Width = 200;
+            // 
+            // ColText
+            // 
+            this.ColText.DataPropertyName = "Text";
+            this.ColText.HeaderText = "Text";
+            this.ColText.Name = "ColText";
+            this.ColText.Width = 200;
+            // 
             // RadiobuttonsConfigurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,10 +107,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gridOptions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDefaultValue;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColText;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
-    public partial class DatetimeDrawer : UserControl, IElementDesignDrawer
+    public partial class DatetimeDrawer : BaseDrawer, IElementDesignDrawer
     {
-        public DatetimeDrawer()
+        public DatetimeDrawer(PropertyPage page) : base(page)
         {
             InitializeComponent();
         }

@@ -18,18 +18,25 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Properties.Add("IncludeTime", false);
             this.Properties.Add("DateRange", false);
 
-            this.Drawer = new DatetimeDrawer();
-            this.PropertyConfigurator = new DatetimePropertyConfigurator();
+            this.Drawer = new DatetimeDrawer(this);
+            this.PropertyConfigurator = new DatetimePropertyConfigurator(this);
         }
 
-        public override PropertyPage CreateNew()
+        public override PropertyPage CreateNew(int idx = 0)
         {
-            return new DateTimePropertyPage();
+            PropertyPage p = new DateTimePropertyPage();
+            p.Properties["ID"] = "dateTime" + idx;
+            return p;
         }
 
         public override string GetElementName()
         {
             return "Date/Time";
+        }
+
+        public override string GetElementID()
+        {
+            return Settings.Default.DATETIME;
         }
 
         public override Image GetIcon()

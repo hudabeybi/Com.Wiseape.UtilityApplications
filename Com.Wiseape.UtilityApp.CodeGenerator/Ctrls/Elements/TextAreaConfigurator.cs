@@ -13,7 +13,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         private System.Windows.Forms.CheckBox chkHtml;
 
 
-        public TextAreaConfigurator()
+        public TextAreaConfigurator(PropertyPage propertyPage) : base(propertyPage)
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkHtml
             // 
             this.chkHtml.AutoSize = true;
-            this.chkHtml.Location = new System.Drawing.Point(15, 142);
+            this.chkHtml.Location = new System.Drawing.Point(16, 185);
             this.chkHtml.Name = "chkHtml";
             this.chkHtml.Size = new System.Drawing.Size(67, 17);
             this.chkHtml.TabIndex = 16;
@@ -37,8 +37,22 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.chkHtml);
             this.Name = "TextAreaConfigurator";
-            this.Size = new System.Drawing.Size(827, 177);
+            this.Size = new System.Drawing.Size(827, 226);
             this.Load += new System.EventHandler(this.TextboxDesigner_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.txtID, 0);
+            this.Controls.SetChildIndex(this.txtClass, 0);
+            this.Controls.SetChildIndex(this.txtStyle, 0);
+            this.Controls.SetChildIndex(this.txtDefaultValue, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.txtLabel, 0);
+            this.Controls.SetChildIndex(this.txtDataField, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.txtPlaceholder, 0);
+            this.Controls.SetChildIndex(this.lblPlaceholder, 0);
             this.Controls.SetChildIndex(this.chkHtml, 0);
             this.ResumeLayout(false);
             this.PerformLayout();

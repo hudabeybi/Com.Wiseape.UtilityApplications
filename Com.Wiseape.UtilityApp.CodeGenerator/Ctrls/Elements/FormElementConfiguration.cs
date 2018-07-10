@@ -18,7 +18,21 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             set
             {
                 this.grpBox.Controls.Clear();
+                value.Top = 10;
+                value.Left = 10;
                 this.grpBox.Controls.Add(value);
+                this.grpBox.Width = value.Width + 20;
+                this.grpBox.Height = value.Height + 20;
+                this.Width = this.grpBox.Width + 40;
+                this.Height = this.grpBox.Height + 120;
+                btnOk.Top = this.Height - 90;
+                
+
+                btnCancel.Top = this.Height - 90;
+                btnCancel.Left = this.Width - btnCancel.Width - 60;
+                btnOk.Left = btnCancel.Left - btnOk.Width;
+
+                this.Text = "Element Configuration - " + ((CommonPropertyConfigurator)value).PropertyPage.GetElementName();
             }
             get
             {
@@ -40,6 +54,11 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             IsCancel = true;
             this.Close();
+        }
+
+        private void FormElementConfiguration_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

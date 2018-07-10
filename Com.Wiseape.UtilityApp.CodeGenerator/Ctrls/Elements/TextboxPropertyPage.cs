@@ -18,9 +18,10 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Properties.Add("MinLength", 0);
             this.Properties.Add("PasswordMask", "");
             this.Properties.Add("IsNumeric", false);
+            this.Properties.Add("IsHidden", false);
 
-            this.PropertyConfigurator = new TextboxConfigurator();
-            this.Drawer = new TextboxDrawer();
+            this.PropertyConfigurator = new TextboxConfigurator(this);
+            this.Drawer = new TextboxDrawer(this);
 
         }
 
@@ -29,14 +30,21 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             return "Textbox";
         }
 
+        public override string GetElementID()
+        {
+            return Settings.Default.TEXTBOX;
+        }
+
         public override Image GetIcon()
         {
             return (Image) Resources.text_box;
         }
 
-        public override PropertyPage CreateNew()
+        public override PropertyPage CreateNew(int idx = 0)
         {
-            return new TextboxPropertyPage();
+            PropertyPage p = new TextboxPropertyPage();
+            p.Properties["ID"] = "textBox" + idx;
+            return p;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +20,26 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Model
         public DataSourceTable Datasource { get; set; }
         public string Namespace { get; set; }
         public string Classname { get; set; }
+
+        public List<TableRowObject> UIObjects
+        {
+            get
+            {
+                if (this.ElementLayoutDesigner != null)
+                    return this.ElementLayoutDesigner.TableRows;
+                else
+                    return null;
+            }
+            set
+            {
+                if (this.ElementLayoutDesigner == null)
+                    this.ElementLayoutDesigner = new ElementLayoutDesigner();
+                this.ElementLayoutDesigner.TableRows = value;
+            }
+        }
+
+        [JsonIgnore]
+        public ElementLayoutDesigner ElementLayoutDesigner { get; set; }
 
     }
 }

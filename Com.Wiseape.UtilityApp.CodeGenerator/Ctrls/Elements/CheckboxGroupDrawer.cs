@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
-    public partial class CheckboxGroupDrawer : UserControl, IElementDesignDrawer
+    public partial class CheckboxGroupDrawer : BaseDrawer, IElementDesignDrawer
     {
-        public CheckboxGroupDrawer()
+        public CheckboxGroupDrawer(PropertyPage page) : base(page)
         {
             InitializeComponent();
         }
@@ -21,18 +22,30 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             if (properties.ContainsKey("Items"))
             {
-                int left = 10;
-                Dictionary<string, string> items = (Dictionary<string, string>)properties["Items"];
-                this.panel1.Controls.Clear();
-                foreach (KeyValuePair<string, string> item in items)
+                Dictionary<string, string> items = null;
+                if (properties["Items"].GetType() == typeof(JObject) )
                 {
-                    RadioButton btn = new RadioButton();
-                    btn.Text = item.Value;
-                    btn.Left = left;
-                    btn.Width = 100;
-                    left += btn.Width + 5;
-                    btn.Top = 20;
-                    this.panel1.Controls.Add(btn);
+                    string s = properties["Items"].ToString();
+                    Dictionary<string, string> theItems = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(s);
+                    properties["Items"] = theItems;
+                }
+                else
+                    items = (Dictionary<string, string>)properties["Items"];
+
+                int left = 10;
+                if (items != null && items.Count > 0)
+                {
+                    this.panel1.Controls.Clear();
+                    foreach (KeyValuePair<string, string> item in items)
+                    {
+                        RadioButton btn = new RadioButton();
+                        btn.Text = item.Value;
+                        btn.Left = left;
+                        btn.Width = 100;
+                        left += btn.Width + 5;
+                        btn.Top = 20;
+                        this.panel1.Controls.Add(btn);
+                    }
                 }
             }
 

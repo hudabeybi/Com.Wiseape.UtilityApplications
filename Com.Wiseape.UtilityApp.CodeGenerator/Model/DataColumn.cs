@@ -74,7 +74,10 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Model
             }
         }
 
+        [JsonIgnore]
         private Dictionary<string, object> configs = new Dictionary<string, object>();
+
+        //[JsonRequired]
 
         [JsonProperty(Order = 10)]
         public Dictionary<string, object> ControlConfigurations
@@ -96,6 +99,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Model
                     this.ConfigContent.DisplayConfiguration(value);
             }
         }
+
 
         [JsonIgnore]
         public string ControlConfigurationsJson

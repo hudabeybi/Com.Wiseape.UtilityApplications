@@ -7,26 +7,28 @@ using System.Threading.Tasks;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Model
 {
+    public enum ControlType
+    {
+        Textbox = 1,
+        Combobox = 2,
+        LookupCombobox = 10,
+        Radiobuttons = 3,
+        LookupRadiobuttons = 11,
+        Checkboxes = 4,
+        LookupCheckboxes = 12,
+        Date = 5,
+        Datetime = 6,
+        Daterange = 7,
+        Image = 8,
+        File = 9,
+        Numericbox = 13,
+        Textarea = 14,
+        HtmlEditor = 15,
+        Hidden = 16
+    }
     public class UIColumn : DataColumn
     {
-        public enum ControlType
-        {
-            Textbox=1,
-            Combobox=2,
-            LookupCombobox=10,
-            Radiobuttons=3,
-            LookupRadiobuttons=11,
-            Checkboxes=4,
-            LookupCheckboxes=12,
-            Date=5,
-            Datetime=6,
-            Daterange=7,
-            Image=8,
-            File=9,
-            Numericbox=13,
-            Textarea=14,
-            HtmlEditor=15
-        }
+ 
         public string Label {
             get
             {
@@ -50,7 +52,14 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Model
 
         public string InputGroup { get; set; }
 
-        public ControlType CtrlType { get; set; }
+        public ControlType CtrlType {
+            get
+            {
+                string ctrlType = this.ConfigContent.GetControlType();
+                ControlType type = (ControlType) Enum.Parse(typeof(ControlType), ctrlType);
+                return type;
+            }
+        }
 
        
     }

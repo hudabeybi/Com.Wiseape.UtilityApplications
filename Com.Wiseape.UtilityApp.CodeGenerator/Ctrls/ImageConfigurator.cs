@@ -39,7 +39,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "Image";
+            return ControlType.Image.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

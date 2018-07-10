@@ -1,7 +1,33 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Com.Wiseape.UtilityApp.CodeGenerator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TEXTBOX" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TEXTBOX</Value>
+    </Setting>
+    <Setting Name="TEXTAREA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TEXTAREA</Value>
+    </Setting>
+    <Setting Name="SELECTBOX" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SELECTBOX</Value>
+    </Setting>
+    <Setting Name="RADIOGROUP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RADIOGROUP</Value>
+    </Setting>
+    <Setting Name="DATETIME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DATETIME</Value>
+    </Setting>
+    <Setting Name="TABPAGES" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TABPAGES</Value>
+    </Setting>
+    <Setting Name="GRID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GRID</Value>
+    </Setting>
+    <Setting Name="CHECKBOXGROUP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CHECKBOXGROUP</Value>
+    </Setting>
+    <Setting Name="FILEUPLOAD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FILEUPLOAD</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

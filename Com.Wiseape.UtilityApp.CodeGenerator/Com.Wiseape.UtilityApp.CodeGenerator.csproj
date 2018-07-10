@@ -94,6 +94,9 @@
     <Compile Include="Ctrls\ElementPadCtrl.Designer.cs">
       <DependentUpon>ElementPadCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ctrls\Elements\BaseDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ctrls\Elements\CheckboxGroupDrawer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,17 +126,45 @@
     <Compile Include="Ctrls\Elements\ElementLayoutDesigner.Designer.cs">
       <DependentUpon>ElementLayoutDesigner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ctrls\Elements\ElementLayoutObject.cs" />
+    <Compile Include="Ctrls\Elements\ElementObject.cs" />
     <Compile Include="Ctrls\Elements\FormElementConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ctrls\Elements\FormElementConfiguration.Designer.cs">
       <DependentUpon>FormElementConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ctrls\Elements\FormInputTypeConfigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormInputTypeConfigure.Designer.cs">
+      <DependentUpon>FormInputTypeConfigure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ctrls\Elements\FormTableRow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ctrls\Elements\FormTableRow.Designer.cs">
       <DependentUpon>FormTableRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormTabPageConfigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormTabPageConfigure.Designer.cs">
+      <DependentUpon>FormTabPageConfigure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FormTemp.Designer.cs">
+      <DependentUpon>FormTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\GridActionButton.cs" />
+    <Compile Include="Ctrls\Elements\GridColumn.cs" />
+    <Compile Include="Ctrls\Elements\GridConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\GridDrawer.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ctrls\Elements\IElementConfigurator.cs" />
     <Compile Include="Ctrls\Elements\IElementDesignDrawer.cs" />
@@ -169,19 +200,40 @@
     <Compile Include="Ctrls\Elements\SelectStaticValueCtrl.Designer.cs">
       <DependentUpon>SelectStaticValueCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ctrls\Elements\TabItem.cs" />
     <Compile Include="Ctrls\Elements\TableCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ctrls\Elements\TableCell.Designer.cs">
       <DependentUpon>TableCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ctrls\Elements\TableCellObject.cs" />
+    <Compile Include="Ctrls\Elements\GridPropertyPage.cs" />
     <Compile Include="Ctrls\Elements\TableRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ctrls\Elements\TableRow.Designer.cs">
       <DependentUpon>TableRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ctrls\Elements\TableRowObject.cs" />
+    <Compile Include="Ctrls\Elements\TabPageDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TabPageDrawer.Designer.cs">
+      <DependentUpon>TabPageDrawer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TabPagesConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\TabPagesPropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\FileUploadConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ctrls\Elements\TextAreaConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\FileUploadPropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\FileUploadDrawer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ctrls\Elements\TextboxConfigurator.cs">
@@ -221,6 +273,12 @@
     </Compile>
     <Compile Include="Ctrls\FunctionConfigurator.Designer.cs">
       <DependentUpon>FunctionConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrls\HiddenConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\HiddenConfiguration.Designer.cs">
+      <DependentUpon>HiddenConfiguration.cs</DependentUpon>
     </Compile>
     <Compile Include="Ctrls\ImageConfigurator.cs">
       <SubType>UserControl</SubType>
@@ -313,6 +371,12 @@
     <Compile Include="FormCreateProject.Designer.cs">
       <DependentUpon>FormCreateProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGenerateUIType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerateUIType.Designer.cs">
+      <DependentUpon>FormGenerateUIType.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +394,12 @@
     </Compile>
     <Compile Include="FormSavePath.Designer.cs">
       <DependentUpon>FormSavePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormText.Designer.cs">
+      <DependentUpon>FormText.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVisualDesigner.cs">
       <SubType>Form</SubType>
@@ -413,6 +483,9 @@
     <EmbeddedResource Include="Ctrls\ElementPadCtrl.resx">
       <DependentUpon>ElementPadCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\BaseDrawer.resx">
+      <DependentUpon>BaseDrawer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\CheckboxGroupDrawer.resx">
       <DependentUpon>CheckboxGroupDrawer.cs</DependentUpon>
     </EmbeddedResource>
@@ -431,8 +504,23 @@
     <EmbeddedResource Include="Ctrls\Elements\FormElementConfiguration.resx">
       <DependentUpon>FormElementConfiguration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\FormInputTypeConfigure.resx">
+      <DependentUpon>FormInputTypeConfigure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\FormTableRow.resx">
       <DependentUpon>FormTableRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\FormTabPageConfigure.resx">
+      <DependentUpon>FormTabPageConfigure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\FormTemp.resx">
+      <DependentUpon>FormTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\GridConfigurator.resx">
+      <DependentUpon>GridConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\GridDrawer.resx">
+      <DependentUpon>GridDrawer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\RadioGroupDrawer.resx">
       <DependentUpon>RadioGroupDrawer.cs</DependentUpon>
@@ -455,8 +543,20 @@
     <EmbeddedResource Include="Ctrls\Elements\TableRow.resx">
       <DependentUpon>TableRow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TabPageDrawer.resx">
+      <DependentUpon>TabPageDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\TabPagesConfigurator.resx">
+      <DependentUpon>TabPagesConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\FileUploadConfigurator.resx">
+      <DependentUpon>FileUploadConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\TextAreaConfigurator.resx">
       <DependentUpon>TextAreaConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\FileUploadDrawer.resx">
+      <DependentUpon>FileUploadDrawer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\TextboxConfigurator.resx">
       <DependentUpon>TextboxConfigurator.cs</DependentUpon>
@@ -478,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\FunctionConfigurator.resx">
       <DependentUpon>FunctionConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\HiddenConfiguration.resx">
+      <DependentUpon>HiddenConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\ImageConfigurator.resx">
       <DependentUpon>ImageConfigurator.cs</DependentUpon>
@@ -524,6 +627,9 @@
     <EmbeddedResource Include="FormCreateProject.resx">
       <DependentUpon>FormCreateProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerateUIType.resx">
+      <DependentUpon>FormGenerateUIType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -532,6 +638,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSavePath.resx">
       <DependentUpon>FormSavePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormText.resx">
+      <DependentUpon>FormText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVisualDesigner.resx">
       <DependentUpon>FormVisualDesigner.cs</DependentUpon>
@@ -627,6 +736,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\radio-button-group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-tabs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-upload-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\painting-palette.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

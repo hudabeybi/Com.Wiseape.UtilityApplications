@@ -74,7 +74,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "Radiobuttons";
+            return ControlType.Radiobuttons.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

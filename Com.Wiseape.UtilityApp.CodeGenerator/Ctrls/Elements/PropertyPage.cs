@@ -15,8 +15,19 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
     {
 
         private Dictionary<string, object> properties = new Dictionary<string, object>();
-        public Dictionary<string, object> Properties { get { return properties; } }
-        public IElementDesignDrawer Drawer { get; set; }
+        public Dictionary<string, object> Properties {
+            get { return properties; }
+            set { properties = value;
+                IElementConfigurator configurator = (IElementConfigurator)PropertyConfigurator;
+                configurator.Display(properties);
+
+                IElementDesignDrawer drawer = this.drawer;
+                drawer.Draw(properties);
+            }
+        }
+
+        IElementDesignDrawer drawer = null;
+        public IElementDesignDrawer Drawer { get { return drawer; } set { drawer = value; } }
 
         public UserControl PropertyConfigurator { get; set; }
 
@@ -25,10 +36,11 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             this.Properties.Add("ID", "");
             this.Properties.Add("Label", "Label");
-            this.Properties.Add("DefaultValue", "Default Value");
+            this.Properties.Add("DefaultValue", "");
             this.Properties.Add("DataField", "");
             this.Properties.Add("CssStyle", "");
             this.Properties.Add("CssClass", "");
+            this.Properties.Add("Placeholder", "Please, enter " + this.Properties["Label"]);
         }
 
         public void ShowConfigurationWindow()
@@ -49,12 +61,17 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             return "DefaultPropertyPage";
         }
 
+        public virtual string GetElementID()
+        {
+            return "DefaultPropertyPage";
+        }
+
         public virtual Image GetIcon()
         {
             return null;
         }
 
-        public virtual PropertyPage CreateNew()
+        public virtual PropertyPage CreateNew(int idx = 0)
         {
             return null;
         }

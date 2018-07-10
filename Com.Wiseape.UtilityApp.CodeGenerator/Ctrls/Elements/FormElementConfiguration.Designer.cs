@@ -35,15 +35,16 @@
             // 
             // grpBox
             // 
+            this.grpBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpBox.Location = new System.Drawing.Point(13, 5);
             this.grpBox.Name = "grpBox";
-            this.grpBox.Size = new System.Drawing.Size(837, 446);
+            this.grpBox.Size = new System.Drawing.Size(922, 584);
             this.grpBox.TabIndex = 0;
             this.grpBox.TabStop = false;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(694, 457);
+            this.btnOk.Location = new System.Drawing.Point(779, 595);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 1;
@@ -53,7 +54,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(775, 457);
+            this.btnCancel.Location = new System.Drawing.Point(860, 595);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -65,12 +66,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 492);
+            this.ClientSize = new System.Drawing.Size(947, 630);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.grpBox);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormElementConfiguration";
             this.Text = "Element Configuration";
+            this.Load += new System.EventHandler(this.FormElementConfiguration_Load);
             this.ResumeLayout(false);
 
         }

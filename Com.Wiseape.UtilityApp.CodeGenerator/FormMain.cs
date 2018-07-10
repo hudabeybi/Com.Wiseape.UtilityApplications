@@ -197,8 +197,34 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
                 formPanel.Controls.Add((UserControl) selectedItem.ModelTypeConfigurator);
                 this.formPanel.Controls[0].Width = this.formPanel.Width - 10;
                 this.formPanel.Controls[0].Height = this.formPanel.Height - 10;
+
+                if(selectedItem.ModelTypeConfigurator.GetType() == typeof(UIConfiguratorModelType))
+                {
+                    UIConfiguratorModelType configurator = (UIConfiguratorModelType)selectedItem.ModelTypeConfigurator;
+                    configurator.OnVisualDesignerButtonClick += Configurator_OnVisualDesignerButtonClick;
+                }
                 FillCmbDatasource();
             }
+        }
+
+        private void Configurator_OnVisualDesignerButtonClick(DataSourceUITable uiTable)
+        {
+            OpenVisualDesigner(uiTable);
+        }
+
+        void OpenVisualDesigner(DataSourceUITable uiTable)
+        {
+            FormGenerateUIType frmType = new FormGenerateUIType();
+            frmType.ShowDialog();
+
+            GenerateUIType uiType = frmType.UIType;
+
+            //DataSourceUITable newTable = (DataSourceUITable)gridColumns.DataSource;
+            FormVisualDesigner frm = new FormVisualDesigner();
+            frm.UIType = uiType;
+            frm.CurrentProject = this.CurrentProject;
+            frm.CurrentModule = this.CurrentModule;
+            frm.ShowDialog();
         }
 
 
@@ -366,7 +392,12 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
             module.Namespace = txtNamespace.Text;
             module.Classname = txtClassName.Text;
             module.Connection = (SavedConnection) cmbSavedConnection.SelectedItem;
-            module.Datasource = (DataSourceTable)cmbDatasource.SelectedItem;
+            //if(module.Datasource == null)
+            //module.Datasource = (DataSourceTable)cmbDatasource.SelectedItem;
+
+            ModelType modelType = (ModelType)cmbModelType.SelectedItem;
+            module.Datasource = (DataSourceTable)modelType.Datasource;
+
             module.ModelType = ((ModelType)cmbModelType.SelectedItem).Clone();
             return module;
         }
@@ -427,8 +458,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
 
                 ModelType modelType = (ModelType)cmbModelType.SelectedItem;
                 //modelType.Datasource = module.ModelType.Datasource;
-                if(module.ModelType != null)
-                    modelType.Datasource = module.ModelType.Datasource;
+                //if(module.ModelType != null)
+                if(modelType != null)
+                        modelType.Datasource = module.Datasource;
             }
         }
 

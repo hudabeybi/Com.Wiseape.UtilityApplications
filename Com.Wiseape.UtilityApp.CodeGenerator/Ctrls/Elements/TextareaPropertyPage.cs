@@ -14,8 +14,8 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         public TextareaPropertyPage()
         {
             this.Properties.Add("IsHtml", true);
-            this.PropertyConfigurator = new TextAreaConfigurator();
-            this.Drawer = new TextAreaDrawer();
+            this.PropertyConfigurator = new TextAreaConfigurator(this);
+            this.Drawer = new TextAreaDrawer(this);
 
         }
 
@@ -24,14 +24,21 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             return "Textarea";
         }
 
+        public override string GetElementID()
+        {
+            return Settings.Default.TEXTAREA;
+        }
+
         public override Image GetIcon()
         {
             return (Image) Resources.type_box__1_;
         }
 
-        public override PropertyPage CreateNew()
+        public override PropertyPage CreateNew(int idx = 0)
         {
-            return new TextareaPropertyPage();
+            PropertyPage p = new TextareaPropertyPage();
+            p.Properties["ID"] = "textArea" + idx;
+            return p;
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
-    public partial class SelectBoxDrawer : UserControl, IElementDesignDrawer
+    public partial class SelectBoxDrawer : BaseDrawer, IElementDesignDrawer
     {
-        public SelectBoxDrawer()
+        public SelectBoxDrawer(PropertyPage page) : base(page)
         {
             InitializeComponent();
         }
@@ -20,6 +20,26 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         public void Draw(Dictionary<string, object> properties)
         {
             label1.Text = properties["Label"].ToString();
+
+            if (properties["Items"].GetType() == typeof(Dictionary<string, object>))
+            {
+                Dictionary<string, object> items = (Dictionary<string, object>)properties["Items"];
+                comboBox1.Items.Clear();
+                foreach (KeyValuePair<string, object> item in items)
+                {
+                    comboBox1.Items.Add(item.Value);
+                }
+            }
+
+            if (properties["Items"].GetType() == typeof(Dictionary<string, string>))
+            {
+                Dictionary<string, string> items = (Dictionary<string, string>)properties["Items"];
+                comboBox1.Items.Clear();
+                foreach (KeyValuePair<string, string> item in items)
+                {
+                    comboBox1.Items.Add(item.Value);
+                }
+            }
         }
 
         private void SelectBoxDrawer_Load(object sender, EventArgs e)

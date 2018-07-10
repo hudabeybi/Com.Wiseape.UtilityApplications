@@ -35,7 +35,10 @@
             // 
             // txtResult
             // 
+            this.txtResult.AutoScroll = true;
+            this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult.IsReadOnly = false;
+            this.txtResult.LineViewerStyle = ICSharpCode.TextEditor.Document.LineViewerStyle.FullRow;
             this.txtResult.Location = new System.Drawing.Point(13, 13);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(1108, 575);

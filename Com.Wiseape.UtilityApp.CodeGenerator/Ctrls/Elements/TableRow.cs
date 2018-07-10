@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Com.Wiseape.UtilityApp.CodeGenerator.Properties;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
@@ -15,17 +16,21 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         public delegate void OnTableRowCellClickDelegate(TableCell cell);
         public event OnTableRowCellClickDelegate OnTableRowCellClick;
 
+        public delegate void OnStateChangedDelegate(object sender);
+        public event OnStateChangedDelegate OnStateChanged;
+
         public int Index { get; set; }
 
         public TableRow()
         {
             InitializeComponent();
-            
+            AddTableCells(1);
+
         }
 
         private void TableRow_Load(object sender, EventArgs e)
         {
-            AddTableCells(1);
+           
         }
 
         private void TableRow_DoubleClick(object sender, EventArgs e)
@@ -40,8 +45,36 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             if (res == DialogResult.OK)
             {
                 AddTableCells(frm.TotalColumns);
+
+                if (this.OnStateChanged != null)
+                    this.OnStateChanged(this);
             }
         }
+
+        public void CreateTableCellControls(List<TableCellObject> cellObjects)
+        {
+            int totalCell = cellObjects.Count;
+            AddTableCells(totalCell);
+
+            if (totalCell > 0)
+            {
+                for (int i = 0; i < totalCell; i++)
+                {
+                    TableCell cell = (TableCell)this.Controls[i];
+                    TableCellObject cellObj = (TableCellObject)cellObjects[i];
+                    string elementType = cellObj.Element.ElementType;
+                    PropertyPage page = cellObj.CreatePropertyPage();
+                    if (cellObj.Element != null && page != null)
+                    {
+                        page.Properties = cellObj.Element.Properties;
+                        cell.Element = page;
+                    }
+                    
+
+                }
+            }
+        }
+
 
         public void AddTableCells(int totalCell)
         {
@@ -51,6 +84,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             for (int i = 0; i < totalCell; i++)
             {
                 TableCell cell = new TableCell();
+                cell.Name = "TableCell" + (this.Index + i);
                 cell.ParentRow = this;
                 cell.Width = w;
                 cell.Height = this.Height;
@@ -59,21 +93,31 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
                 this.Controls.Add(cell);
                 cell.OnDblClick += Cell_OnDblClick;
                 cell.OnClick += Cell_OnClick;
+                cell.OnStateChanged += Cell_OnStateChanged;
             }
+        }
+
+        private void Cell_OnStateChanged(object sender)
+        {
+            if (this.OnStateChanged != null)
+                this.OnStateChanged(sender);
         }
 
         public void ResizeCells()
         {
             int totalCell = this.Controls.Count;
-            int w = this.Width / totalCell;
-            int l = 0;
-            for (int i = 0; i < totalCell; i++)
+            if (totalCell > 0)
             {
-                TableCell cell = (TableCell)this.Controls[i];
-                cell.Width = w;
-                cell.Height = this.Height;
-                cell.Left = l;
-                l += w;
+                int w = this.Width / totalCell;
+                int l = 0;
+                for (int i = 0; i < totalCell; i++)
+                {
+                    TableCell cell = (TableCell)this.Controls[i];
+                    cell.Width = w;
+                    cell.Height = this.Height;
+                    cell.Left = l;
+                    l += w;
+                }
             }
         }
 

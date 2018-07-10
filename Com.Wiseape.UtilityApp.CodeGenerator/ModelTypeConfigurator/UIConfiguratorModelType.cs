@@ -55,10 +55,13 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.ModelTypeConfigurator
             {
                 string json = Utility.Serializer.Json.Serialize(table);
                 json = json.Replace("DataColumns", "DataColumns2");
-                //json = json.Replace("DataColumns22", "DataColumns2");
+                json = json.Replace("DataColumns22", "DataColumns2");
                 DataSourceUITable tbl = Utility.Serializer.Json.Deserialize<DataSourceUITable>(json);
                 foreach (UIColumn col in tbl.DataColumns2)
                 {
+                    if(col.ConfigContent == null)
+                        SetDefaultConfigContent(col);
+                    
                     tbl.DataColumns.Add(col);
                 }
                 CurrentTable = tbl;
@@ -95,7 +98,13 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.ModelTypeConfigurator
                 uiColumn.Edit = true;
                 uiColumn.Delete = true;
                 uiColumn.Label = col.ColumnText;
-                uiColumn = SetDefaultConfigContent(uiColumn);
+                if (col.ConfigContent == null)
+                    uiColumn = SetDefaultConfigContent(uiColumn);
+                else
+                {
+                    uiColumn.ConfigContent = col.ConfigContent;
+                    uiColumn.ConfigContent.InitConfiguration(uiColumn);
+                }
                 newTable.DataColumns.Add(uiColumn);
             }
 
@@ -112,7 +121,11 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.ModelTypeConfigurator
             uiColumn.Label = result;
             uiColumn.ColumnText = result;
 
-            if (uiColumn.DataType.ToLower().Contains("int") || uiColumn.DataType.ToLower().Contains("long") || uiColumn.DataType.ToLower().Contains("double") || uiColumn.DataType.ToLower().Contains("float"))
+            if (uiColumn.Key)
+            {
+                uiColumn.ConfigContent = new HiddenConfiguration();
+            }
+            else if (uiColumn.DataType.ToLower().Contains("int") || uiColumn.DataType.ToLower().Contains("long") || uiColumn.DataType.ToLower().Contains("double") || uiColumn.DataType.ToLower().Contains("float"))
             {
                 uiColumn.ConfigContent = new NumericboxConfiguration();
             }
@@ -229,5 +242,15 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.ModelTypeConfigurator
                 }
             }
         }
+
+        public delegate void VisualDesignerClickDelegate(DataSourceUITable uiTable);
+        public event VisualDesignerClickDelegate OnVisualDesignerButtonClick;
+
+        private void btnOpenVisualDesigner_Click(object sender, EventArgs e)
+        {
+            if (this.OnVisualDesignerButtonClick != null)
+                this.OnVisualDesignerButtonClick((DataSourceUITable)this.GetDatasource());
+        }
+
     }
 }

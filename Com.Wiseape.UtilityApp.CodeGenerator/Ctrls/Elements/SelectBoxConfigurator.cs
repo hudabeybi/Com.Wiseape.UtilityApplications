@@ -15,7 +15,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         private SelectDynamicValueCtrl selectDynamicValueCtrl = new SelectDynamicValueCtrl();
         private SelectStaticValueCtrl selectStaticValueCtrl = new SelectStaticValueCtrl();
 
-        public SelectBoxConfigurator()
+        public SelectBoxConfigurator(PropertyPage propertyPage) : base(propertyPage)
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             this.rdStatic.AutoSize = true;
             this.rdStatic.Checked = true;
-            this.rdStatic.Location = new System.Drawing.Point(13, 153);
+            this.rdStatic.Location = new System.Drawing.Point(13, 194);
             this.rdStatic.Name = "rdStatic";
             this.rdStatic.Size = new System.Drawing.Size(87, 17);
             this.rdStatic.TabIndex = 12;
@@ -43,7 +43,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // rdDynamic
             // 
             this.rdDynamic.AutoSize = true;
-            this.rdDynamic.Location = new System.Drawing.Point(130, 153);
+            this.rdDynamic.Location = new System.Drawing.Point(125, 194);
             this.rdDynamic.Name = "rdDynamic";
             this.rdDynamic.Size = new System.Drawing.Size(101, 17);
             this.rdDynamic.TabIndex = 13;
@@ -53,9 +53,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // pnlValues
             // 
-            this.pnlValues.Location = new System.Drawing.Point(13, 177);
+            this.pnlValues.Location = new System.Drawing.Point(3, 217);
             this.pnlValues.Name = "pnlValues";
-            this.pnlValues.Size = new System.Drawing.Size(799, 216);
+            this.pnlValues.Size = new System.Drawing.Size(799, 262);
             this.pnlValues.TabIndex = 14;
             // 
             // SelectBoxConfigurator
@@ -65,8 +65,22 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Controls.Add(this.rdDynamic);
             this.Controls.Add(this.rdStatic);
             this.Name = "SelectBoxConfigurator";
-            this.Size = new System.Drawing.Size(827, 408);
+            this.Size = new System.Drawing.Size(827, 503);
             this.Load += new System.EventHandler(this.SelectBoxConfigurator_Load);
+            this.Controls.SetChildIndex(this.txtPlaceholder, 0);
+            this.Controls.SetChildIndex(this.lblPlaceholder, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.txtID, 0);
+            this.Controls.SetChildIndex(this.txtClass, 0);
+            this.Controls.SetChildIndex(this.txtStyle, 0);
+            this.Controls.SetChildIndex(this.txtDefaultValue, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.txtLabel, 0);
+            this.Controls.SetChildIndex(this.txtDataField, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.rdStatic, 0);
             this.Controls.SetChildIndex(this.rdDynamic, 0);
             this.Controls.SetChildIndex(this.pnlValues, 0);
@@ -121,7 +135,15 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             base.Display(properties);
             bool ok = properties.ContainsKey("IsStatic");
             this.rdStatic.Checked = Convert.ToBoolean( properties["IsStatic"]);
-            this.selectStaticValueCtrl.DisplayItems( (Dictionary<string, string>) properties["Items"]);
+            try
+            {
+                this.selectStaticValueCtrl.DisplayItems((Dictionary<string, string>)properties["Items"]);
+            }
+            catch
+            {
+
+            }
+            
             this.selectDynamicValueCtrl.QueryOrUrl = properties["QueryOrUrl"].ToString();
             this.selectDynamicValueCtrl.ValueMember = properties["ValueMember"].ToString();
             this.selectDynamicValueCtrl.DisplayMember = properties["DisplayMember"].ToString();

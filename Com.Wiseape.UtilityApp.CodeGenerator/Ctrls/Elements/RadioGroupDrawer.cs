@@ -7,32 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
-    public partial class RadioGroupDrawer : UserControl, IElementDesignDrawer
+    public partial class RadioGroupDrawer : BaseDrawer, IElementDesignDrawer
     {
-        public RadioGroupDrawer()
+        public RadioGroupDrawer(PropertyPage page) : base(page)
         {
             InitializeComponent();
         }
 
         public void Draw(Dictionary<string, object> properties)
         {
-            if(properties.ContainsKey("Items"))
+            if(properties.ContainsKey("Items") && properties["Items"] != null)
             {
                 int left = 10;
-                Dictionary<string, string> items = (Dictionary<string, string>)properties["Items"];
-                this.panel1.Controls.Clear();
-                foreach(KeyValuePair<string, string> item in items)
+                Dictionary<string, string> items = null;
+
+                if (properties["Items"].GetType() == typeof(JObject))
                 {
-                    RadioButton btn = new RadioButton();
-                    btn.Text = item.Value;
-                    btn.Left = left;
-                    btn.Width = 100;
-                    left += btn.Width + 5; 
-                    this.panel1.Controls.Add(btn);
+                    string s = properties["Items"].ToString();
+                    Dictionary<string, string> theItems = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(s);
+                    properties["Items"] = theItems;
                 }
+                else
+                    items = (Dictionary<string, string>)properties["Items"];
+
+                if (items != null && items.Count > 0)
+                    this.panel1.Controls.Clear();
+                if(items != null)
+                {
+                    foreach (KeyValuePair<string, string> item in items)
+                    {
+                        RadioButton btn = new RadioButton();
+                        btn.Text = item.Value;
+                        btn.Left = left;
+                        btn.Width = 100;
+                        left += btn.Width + 5;
+                        this.panel1.Controls.Add(btn);
+                    }
+                }
+
             }
 
             if (properties.ContainsKey("Label"))

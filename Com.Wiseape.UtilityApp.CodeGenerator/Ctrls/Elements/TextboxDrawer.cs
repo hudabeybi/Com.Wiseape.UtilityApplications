@@ -11,9 +11,9 @@ using System.Windows.Forms;
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
     [Serializable]
-    public partial class TextboxDrawer : UserControl, IElementDesignDrawer
+    public partial class TextboxDrawer : BaseDrawer, IElementDesignDrawer
     {
-        public TextboxDrawer()
+        public TextboxDrawer(PropertyPage page) : base(page)
         {
             InitializeComponent();
         }
@@ -23,8 +23,11 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             if (properties.ContainsKey("Label"))
                 this.lblLAbel.Text = properties["Label"].ToString();
 
-            if (properties.ContainsKey("DefaultValue"))
-                this.textBox1.Text = properties["DefaultValue"].ToString();
+            if (properties.ContainsKey("Placeholder"))
+                this.textBox1.Text = properties["Placeholder"].ToString();
+
+            if (properties.ContainsKey("IsHidden") && Convert.ToBoolean(properties["IsHidden"]) == true)
+                this.textBox1.BackColor = Color.Gray;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

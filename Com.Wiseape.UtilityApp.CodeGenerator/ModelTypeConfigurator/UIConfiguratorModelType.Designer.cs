@@ -30,9 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridColumns = new System.Windows.Forms.DataGridView();
-            this.btnAddRow = new System.Windows.Forms.Button();
-            this.btnDeleteRow = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.ColChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColKey = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +42,12 @@
             this.ColEdit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddRow = new System.Windows.Forms.Button();
+            this.btnDeleteRow = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.btnOpenVisualDesigner = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridColumns)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,34 +79,6 @@
             this.gridColumns.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridColumns_CellContentClick);
             this.gridColumns.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridColumns_CellDoubleClick);
             // 
-            // btnAddRow
-            // 
-            this.btnAddRow.Location = new System.Drawing.Point(12, 2);
-            this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.Size = new System.Drawing.Size(39, 23);
-            this.btnAddRow.TabIndex = 2;
-            this.btnAddRow.Text = "+";
-            this.btnAddRow.UseVisualStyleBackColor = true;
-            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
-            // 
-            // btnDeleteRow
-            // 
-            this.btnDeleteRow.Location = new System.Drawing.Point(50, 2);
-            this.btnDeleteRow.Name = "btnDeleteRow";
-            this.btnDeleteRow.Size = new System.Drawing.Size(39, 23);
-            this.btnDeleteRow.TabIndex = 3;
-            this.btnDeleteRow.Text = "-";
-            this.btnDeleteRow.UseVisualStyleBackColor = true;
-            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.gridColumns);
-            this.panel1.Location = new System.Drawing.Point(4, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1098, 439);
-            this.panel1.TabIndex = 4;
-            // 
             // ColChk
             // 
             this.ColChk.DataPropertyName = "Use";
@@ -129,7 +102,7 @@
             this.ColColumnName.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColColumnName.HeaderText = "Column Name";
             this.ColColumnName.Name = "ColColumnName";
-            this.ColColumnName.Width = 97;
+            this.ColColumnName.Width = 89;
             // 
             // ColLabel
             // 
@@ -143,7 +116,7 @@
             this.ColDataType.DataPropertyName = "DataType";
             this.ColDataType.HeaderText = "Data Type";
             this.ColDataType.Name = "ColDataType";
-            this.ColDataType.Width = 82;
+            this.ColDataType.Width = 76;
             // 
             // ColInputType
             // 
@@ -195,6 +168,34 @@
             this.ColGroup.Name = "ColGroup";
             this.ColGroup.Width = 83;
             // 
+            // btnAddRow
+            // 
+            this.btnAddRow.Location = new System.Drawing.Point(12, 2);
+            this.btnAddRow.Name = "btnAddRow";
+            this.btnAddRow.Size = new System.Drawing.Size(39, 23);
+            this.btnAddRow.TabIndex = 2;
+            this.btnAddRow.Text = "+";
+            this.btnAddRow.UseVisualStyleBackColor = true;
+            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
+            // 
+            // btnDeleteRow
+            // 
+            this.btnDeleteRow.Location = new System.Drawing.Point(50, 2);
+            this.btnDeleteRow.Name = "btnDeleteRow";
+            this.btnDeleteRow.Size = new System.Drawing.Size(39, 23);
+            this.btnDeleteRow.TabIndex = 3;
+            this.btnDeleteRow.Text = "-";
+            this.btnDeleteRow.UseVisualStyleBackColor = true;
+            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.gridColumns);
+            this.panel1.Location = new System.Drawing.Point(4, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1098, 439);
+            this.panel1.TabIndex = 4;
+            // 
             // btnUp
             // 
             this.btnUp.Location = new System.Drawing.Point(111, 2);
@@ -214,10 +215,23 @@
             this.btnDown.Text = "Down";
             this.btnDown.UseVisualStyleBackColor = true;
             // 
+            // btnOpenVisualDesigner
+            // 
+            this.btnOpenVisualDesigner.Image = global::Com.Wiseape.UtilityApp.CodeGenerator.Properties.Resources.painting_palette;
+            this.btnOpenVisualDesigner.Location = new System.Drawing.Point(906, 3);
+            this.btnOpenVisualDesigner.Name = "btnOpenVisualDesigner";
+            this.btnOpenVisualDesigner.Size = new System.Drawing.Size(173, 23);
+            this.btnOpenVisualDesigner.TabIndex = 7;
+            this.btnOpenVisualDesigner.Text = "Open Visual Designer";
+            this.btnOpenVisualDesigner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpenVisualDesigner.UseVisualStyleBackColor = true;
+            this.btnOpenVisualDesigner.Click += new System.EventHandler(this.btnOpenVisualDesigner_Click);
+            // 
             // UIConfiguratorModelType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnOpenVisualDesigner);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.panel1);
@@ -255,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGroup;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnOpenVisualDesigner;
     }
 }

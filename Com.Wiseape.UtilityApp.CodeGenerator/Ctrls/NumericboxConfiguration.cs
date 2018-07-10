@@ -36,7 +36,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "Numericbox";
+            return ControlType.Numericbox.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

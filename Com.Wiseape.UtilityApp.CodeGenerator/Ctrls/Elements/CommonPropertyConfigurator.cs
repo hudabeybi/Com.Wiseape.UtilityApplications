@@ -13,11 +13,19 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
     [Serializable]
     public partial class CommonPropertyConfigurator : UserControl, IElementConfigurator
     {
+        protected PropertyPage propertyPage;
+        public PropertyPage PropertyPage { get { return this.propertyPage; } set { propertyPage = value; } }
         public delegate void OnClickDelegate(CommonPropertyConfigurator element);
         public event OnClickDelegate OnClickEvent;
 
+
         public CommonPropertyConfigurator()
         {
+            InitializeComponent();
+        }
+        public CommonPropertyConfigurator(PropertyPage propertyPage)
+        {
+            this.PropertyPage = propertyPage;
             InitializeComponent();
         }
 
@@ -40,6 +48,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             properties["Label"] = txtLabel.Text;
             properties["CssStyle"] = txtStyle.Text;
             properties["DataField"] = txtDataField.Text;
+            properties["Placeholder"] = txtPlaceholder.Text;
 
         }
 
@@ -48,9 +57,16 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             txtID.Text = properties["ID"].ToString();
             txtClass.Text = properties["CssClass"].ToString();
             txtDefaultValue.Text = properties["DefaultValue"].ToString();
-            txtLabel.Text = properties["Label"].ToString();
+            
             txtStyle.Text = properties["CssStyle"].ToString();
             txtDataField.Text = properties["DataField"].ToString();
+            txtPlaceholder.Text = properties["Placeholder"].ToString();
+            txtLabel.Text = properties["Label"].ToString();
+        }
+
+        private void txtLabel_TextChanged(object sender, EventArgs e)
+        {
+            txtPlaceholder.Text = "{PLEASE_ENTER_" + txtLabel.Text + "}";
         }
     }
 }

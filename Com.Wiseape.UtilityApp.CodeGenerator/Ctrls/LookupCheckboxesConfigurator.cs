@@ -43,7 +43,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "LookupCheckboxes";
+            return ControlType.LookupCheckboxes.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

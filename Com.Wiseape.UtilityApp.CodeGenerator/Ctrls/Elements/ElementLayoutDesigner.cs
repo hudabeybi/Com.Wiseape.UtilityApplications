@@ -13,8 +13,20 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
     public partial class ElementLayoutDesigner : UserControl
     {
         TableCell CurrentTableCell = null;
+        [Browsable(false)]
         public delegate void OnTableCellClickDelegate(TableCell tableCell);
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public event OnTableCellClickDelegate OnTableCellClick;
+
+        public delegate void OnStateChangedDelegate(object sender);
+        public event OnStateChangedDelegate OnStateChanged;
+
+        public bool ShowButtons {
+            get { return this.btnAddRow.Visible; }
+            set { this.btnAddRow.Visible = value; this.btnDeleteCell.Visible = value; this.btnDeleteRow.Visible = value; }
+        }
 
         public ElementLayoutDesigner()
         {
@@ -25,14 +37,18 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             this.panel1.Width = this.Width - this.panel1.Left - 10;
             AddRow();
+            if (this.OnStateChanged != null)
+                this.OnStateChanged(this);
         }
 
         int top = 0;
         int idx = 0;
-        public void AddRow()
+        public TableRow AddRow()
         {
             TableRow row = new TableRow();
             row.Index = idx;
+            row.TabIndex = idx;
+            row.Name = "Row" + idx;
             idx ++;
             row.OnTableRowCellClick += Row_OnTableRowCellClick;
             //row.BorderStyle = BorderStyle.FixedSingle;
@@ -44,6 +60,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             //RearrangeRows();
             
             row.BringToFront();
+            return row;
         }
 
         int GetTop()
@@ -87,6 +104,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
                 row.Top = top;
                 top += row.Height;
             }
+
+            if (this.OnStateChanged != null)
+                this.OnStateChanged(this);
         }
 
         public void DeleteCurrentCell()
@@ -96,6 +116,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             currentRow.Width = this.panel1.Width - 5;
             currentRow.Left = 0;
             currentRow.ResizeCells();
+
+            if (this.OnStateChanged != null)
+                this.OnStateChanged(this);
         }
 
         private void Row_OnTableRowCellClick(TableCell cell)
@@ -105,13 +128,38 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
                 List<TableCell> cells = row.Cells;
                 foreach(TableCell c in cells)
                 {
-                    c.BackColor = Color.White;
+                    c.BackColor = Color.Transparent;
                 }
             }
-
+            cell.BackColor = Color.Wheat;
             this.CurrentTableCell = cell;
+            //MessageBox.Show(cell.ParentRow.Name);
             if (this.OnTableCellClick != null)
                 this.OnTableCellClick(cell);
+        }
+
+        public void SelectCell(int rowIdx, int cellIdx)
+        {
+            int ridx = 0;
+            foreach (TableRow row in panel1.Controls)
+            {
+                int cIdx = 0;
+                List<TableCell> cells = row.Cells;
+                if (row.Index == rowIdx)
+                {
+                    foreach (TableCell c in cells)
+                    {
+                        if (cIdx == cellIdx)
+                        {
+                            this.CurrentTableCell = c;
+                            break;
+                        }
+                        cIdx++;
+                    }
+                    break;
+                }
+                ridx++;
+            }
         }
 
         public void AddElement(PropertyPage ctrl)
@@ -119,26 +167,12 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
            
             if (this.CurrentTableCell != null)
             {
-                UserControl cc = (UserControl)ctrl.Drawer;
-                cc.Width = this.CurrentTableCell.Width - 10;
-                cc.Height = this.CurrentTableCell.Height - 10;
-                cc.Tag = ctrl;
-                cc.DoubleClick += Cc_DoubleClick;
-                this.CurrentTableCell.Controls.Clear();
-                this.CurrentTableCell.Controls.Add(cc);
+                this.CurrentTableCell.Element = ctrl;
             }   
             else
                 MessageBox.Show("No Selected cell. Please, select one cell.");
         }
 
-        private void Cc_DoubleClick(object sender, EventArgs e)
-        {
-            PropertyPage propertyPage = (PropertyPage)((UserControl)sender).Tag;
-            propertyPage.ShowConfigurationWindow();
-
-            //commonPropertyControl.ShowConfigureProperties();
-
-        }
 
         private void ElementLayoutDesigner_SizeChanged(object sender, EventArgs e)
         {
@@ -155,7 +189,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 
         }
 
-        public List<TableRow> Rows
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        protected List<TableRow> Rows
         {
             get
             {
@@ -170,6 +206,68 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 
         }
 
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<TableRowObject> TableRows
+        {
+            get
+            {
+                List<TableRow> ctrls = new List<TableRow>();
+                foreach (TableRow ctrl in this.panel1.Controls)
+                {
+                    ctrls.Add(ctrl);
+                }
+
+                ctrls.Sort((x, y) => x.Index.CompareTo(y.Index));
+
+                List<TableRowObject> rows = new List<TableRowObject>();
+                foreach (Control ctrl in ctrls)
+                {
+                    TableRow row = (TableRow)ctrl;
+                    TableRowObject rowObj = Convert(row);
+                    rows.Add(rowObj);
+                }
+
+                //rows.Reverse();
+                return rows;
+            }
+            set
+            {
+                this.panel1.Controls.Clear();
+                if (value != null)
+                {
+                    foreach (TableRowObject o in value)
+                    {
+                        TableRow newRowCtrl = AddRow(); //ConvertToTableRow(o);
+                        newRowCtrl.OnStateChanged += NewRowCtrl_OnStateChanged;
+                        newRowCtrl.CreateTableCellControls(o.TableCells);
+                    }
+                }
+            }
+        }
+
+        private void NewRowCtrl_OnStateChanged(object sender)
+        {
+            if (this.OnStateChanged != null)
+                this.OnStateChanged(sender);
+        }
+
+        TableRowObject Convert(TableRow row)
+        {
+            TableRowObject o = new TableRowObject();
+            o.AddCellsFromControl(row.Cells);
+            return o;
+        }
+
+        TableRow ConvertToTableRow(TableRowObject o)
+        {
+            TableRow row = new TableRow();
+            this.panel1.Controls.Add(row);
+            row.CreateTableCellControls(o.TableCells);
+            return row;
+        }
+
         private void btnDeleteRow_Click(object sender, EventArgs e)
         {
             this.DeleteCurrentRow();
@@ -178,6 +276,90 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         private void btnDeleteCell_Click(object sender, EventArgs e)
         {
             this.DeleteCurrentCell();
+        }
+
+        public void Clear()
+        {
+            panel1.Controls.Clear();
+            if (this.OnStateChanged != null)
+                this.OnStateChanged(this);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            MoveRowUp();
+        }
+
+        void MoveRowUp()
+        {
+            TableRow currentRow = this.CurrentTableCell.ParentRow;
+            int curRowIdx = currentRow.Index;
+
+            int prevRowIdx = curRowIdx - 1;
+            TableRow prevRow = GetTableRowByIndex(prevRowIdx);
+
+            if(prevRow != null)
+            {
+
+                SwitchRow(prevRow, currentRow);
+                if (this.OnStateChanged != null)
+                    this.OnStateChanged(this);
+            }
+        }
+
+        void MoveRowDown()
+        {
+            TableRow currentRow = this.CurrentTableCell.ParentRow;
+            int curRowIdx = currentRow.Index;
+
+            int prevRowIdx = curRowIdx + 1;
+            TableRow nextRow = GetTableRowByIndex(prevRowIdx);
+
+            if (nextRow != null)
+            {
+
+                SwitchRow( currentRow, nextRow);
+                if (this.OnStateChanged != null)
+                    this.OnStateChanged(this);
+            }
+        }
+
+        void SwitchRow(TableRow prevRow, TableRow currentRow)
+        {
+            int curRowIdx = currentRow.Index;
+            int prevRowIdx = prevRow.Index;
+
+            int curtop = currentRow.Top;
+            int prevtop = prevRow.Top;
+
+
+            currentRow.Top = prevtop;
+            prevRow.Top = curtop;
+
+            prevRow.Index = curRowIdx;
+            currentRow.Index = prevRowIdx;
+
+        }
+
+        TableRow GetTableRowByIndex(int idx)
+        {
+            foreach(TableRow row in this.panel1.Controls)
+            {
+                if (row.Index == idx)
+                    return row;
+            }
+
+            return null;
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            MoveRowDown();
         }
     }
 }

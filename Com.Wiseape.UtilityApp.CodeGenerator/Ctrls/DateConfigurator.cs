@@ -37,7 +37,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 
         public string GetControlType()
         {
-            return "Date";
+            return ControlType.Date.ToString();
         }
 
         public void InitConfiguration(Model.DataColumn column)

@@ -97,6 +97,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeTemplates.XML" />
     <Content Include="heart.ico" />
     <Content Include="Martin-Berube-Animal-Monkey.ico" />
   </ItemGroup>

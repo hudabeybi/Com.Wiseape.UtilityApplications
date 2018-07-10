@@ -14,44 +14,79 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
 {
     public partial class ElementPadCtrl : UserControl
     {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         List<PropertyPage> elementDesigners = new List<PropertyPage>();
 
+        [Browsable(false)]
         public delegate void OnClickDelegate(PropertyPage ctrl);
+
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public event OnClickDelegate OnClickEventHandler;
+
+        private string indexesToShow = "0,1,2,3,4,5,6,7";
+
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public string IndexesToShow {
+                get { return indexesToShow; }
+                set
+                {
+                    indexesToShow = value;
+                    AddElementDesigners();
+                    DisplayElementDesigners();
+                }
+        }
 
         public ElementPadCtrl()
         {
             InitializeComponent();
-        }
-
-        private void ElementPadCtrl_Load(object sender, EventArgs e)
-        {
             AddElementDesigners();
             DisplayElementDesigners();
         }
 
+        private void ElementPadCtrl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        List<PropertyPage> pages = new List<PropertyPage>();
+        List<int> counters = new List<int>();
+
         void AddElementDesigners()
         {
-            TextboxPropertyPage ctrl = new TextboxPropertyPage();
-            //ctrl.OnClickEvent += Ctrl_OnClickEvent;
-            elementDesigners.Add(ctrl);
+            string[] indexes = IndexesToShow.Split(new char[] { ',' });
 
-            TextareaPropertyPage ctrl2 = new TextareaPropertyPage();
-            //ctrl2.OnClickEvent += Ctrl_OnClickEvent;
-            elementDesigners.Add(ctrl2);
+            pages.Clear();
+            pages.Add(new TextboxPropertyPage());
+            pages.Add(new TextareaPropertyPage());
+            pages.Add(new SelectBoxPropertyPage());
+            pages.Add(new RadioGroupPropertyPage());
+            pages.Add(new CheckboxPropertyPage());
+            pages.Add(new DateTimePropertyPage());
+            pages.Add(new GridPropertyPage());
+            pages.Add(new TabPagesPropertyPage());
+            pages.Add(new FileUploadPropertyPage());
 
-            SelectBoxPropertyPage ctrl3 = new SelectBoxPropertyPage();
-            //ctrl2.OnClickEvent += Ctrl_OnClickEvent;
-            elementDesigners.Add(ctrl3);
+            counters.Clear();
+            counters.Add(1);
+            counters.Add(1);
+            counters.Add(1);
+            counters.Add(1);
+            counters.Add(1);
+            counters.Add(1);
+            counters.Add(1);
+            counters.Add(1);
+            counters.Add(1);
 
-            RadioGroupPropertyPage ctrl4 = new RadioGroupPropertyPage();
-            elementDesigners.Add(ctrl4);
 
-            CheckboxPropertyPage ctrl5 = new CheckboxPropertyPage();
-            elementDesigners.Add(ctrl5);
-
-            DateTimePropertyPage ctrl6 = new DateTimePropertyPage();
-            elementDesigners.Add(ctrl6);
+            elementDesigners.Clear();
+            foreach (string idx in indexes)
+            {
+                PropertyPage pg = pages[Convert.ToInt16(idx)];
+                elementDesigners.Add(pg);
+            }
 
         }
 
@@ -85,10 +120,27 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
             }
         }
 
+        int GetPropertyPageIndex(PropertyPage p)
+        {
+            int idx = 0;
+            foreach(PropertyPage page in pages)
+            {
+                if (p.GetElementID() == page.GetElementID())
+                    return idx;
+                idx++;
+            }
+            return idx;
+        }
+
         private void Btn_Click(object sender, EventArgs e)
         {
+            PropertyPage page = (PropertyPage)((Button)sender).Tag;
+            int idx = GetPropertyPageIndex(page);
+            int counter = counters[idx];
+            PropertyPage newPage = page.CreateNew(counter);
+            counters[idx] = counter + 1;
             if (this.OnClickEventHandler != null)
-                this.OnClickEventHandler(((PropertyPage)((Button)sender).Tag).CreateNew());
+                this.OnClickEventHandler(newPage);
         }
     }
 }

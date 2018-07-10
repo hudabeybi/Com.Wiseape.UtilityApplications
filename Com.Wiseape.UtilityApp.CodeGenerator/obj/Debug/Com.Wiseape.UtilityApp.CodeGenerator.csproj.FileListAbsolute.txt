@@ -77,3 +77,16 @@ D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityA
 D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.RadioGroupDrawer.resources
 D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.DatetimeDrawer.resources
 D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.DatetimePropertyConfigurator.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.FormTabPageConfigure.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.TabPageDrawer.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.TabPagesConfigurator.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.BaseDrawer.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.FormText.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.FormTemp.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.FormInputTypeConfigure.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.GridConfigurator.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.GridDrawer.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.FileUploadConfigurator.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.FileUploadDrawer.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.HiddenConfiguration.resources
+D:\Source Codes\Com.Wiseape\Com.Wiseape.UtilityApplications\Com.Wiseape.UtilityApp.CodeGenerator\obj\Debug\Com.Wiseape.UtilityApp.CodeGenerator.FormGenerateUIType.resources
