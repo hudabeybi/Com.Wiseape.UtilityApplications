@@ -41,7 +41,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 175);
+            this.label7.Location = new System.Drawing.Point(14, 254);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 12;
@@ -50,7 +50,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(156, 175);
+            this.label8.Location = new System.Drawing.Point(161, 254);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 13;
@@ -58,14 +58,14 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // txtMaxLength
             // 
-            this.txtMaxLength.Location = new System.Drawing.Point(16, 191);
+            this.txtMaxLength.Location = new System.Drawing.Point(13, 270);
             this.txtMaxLength.Name = "txtMaxLength";
             this.txtMaxLength.Size = new System.Drawing.Size(137, 20);
             this.txtMaxLength.TabIndex = 14;
             // 
             // txtMinLength
             // 
-            this.txtMinLength.Location = new System.Drawing.Point(159, 191);
+            this.txtMinLength.Location = new System.Drawing.Point(159, 270);
             this.txtMinLength.Name = "txtMinLength";
             this.txtMinLength.Size = new System.Drawing.Size(137, 20);
             this.txtMinLength.TabIndex = 15;
@@ -73,7 +73,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkNumeric
             // 
             this.chkNumeric.AutoSize = true;
-            this.chkNumeric.Location = new System.Drawing.Point(451, 192);
+            this.chkNumeric.Location = new System.Drawing.Point(479, 270);
             this.chkNumeric.Name = "chkNumeric";
             this.chkNumeric.Size = new System.Drawing.Size(76, 17);
             this.chkNumeric.TabIndex = 16;
@@ -82,7 +82,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // txtPasswordMask
             // 
-            this.txtPasswordMask.Location = new System.Drawing.Point(301, 190);
+            this.txtPasswordMask.Location = new System.Drawing.Point(315, 270);
             this.txtPasswordMask.Name = "txtPasswordMask";
             this.txtPasswordMask.Size = new System.Drawing.Size(137, 20);
             this.txtPasswordMask.TabIndex = 18;
@@ -90,7 +90,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(298, 176);
+            this.label9.Location = new System.Drawing.Point(312, 254);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(82, 13);
             this.label9.TabIndex = 17;
@@ -99,7 +99,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkHidden
             // 
             this.chkHidden.AutoSize = true;
-            this.chkHidden.Location = new System.Drawing.Point(542, 193);
+            this.chkHidden.Location = new System.Drawing.Point(561, 270);
             this.chkHidden.Name = "chkHidden";
             this.chkHidden.Size = new System.Drawing.Size(60, 17);
             this.chkHidden.TabIndex = 19;
@@ -118,7 +118,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Name = "TextboxConfigurator";
-            this.Size = new System.Drawing.Size(827, 226);
+            this.Size = new System.Drawing.Size(827, 293);
             this.Load += new System.EventHandler(this.TextboxDesigner_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);

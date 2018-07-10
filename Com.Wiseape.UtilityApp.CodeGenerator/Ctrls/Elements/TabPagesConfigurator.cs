@@ -67,10 +67,10 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // tabCtrl
             // 
             this.tabCtrl.Controls.Add(this.tabPage1);
-            this.tabCtrl.Location = new System.Drawing.Point(14, 204);
+            this.tabCtrl.Location = new System.Drawing.Point(14, 274);
             this.tabCtrl.Name = "tabCtrl";
             this.tabCtrl.SelectedIndex = 0;
-            this.tabCtrl.Size = new System.Drawing.Size(792, 318);
+            this.tabCtrl.Size = new System.Drawing.Size(792, 256);
             this.tabCtrl.TabIndex = 4;
             // 
             // tabPage1
@@ -78,14 +78,14 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(784, 292);
+            this.tabPage1.Size = new System.Drawing.Size(784, 230);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(199, 175);
+            this.btnEdit.Location = new System.Drawing.Point(210, 245);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(100, 23);
             this.btnEdit.TabIndex = 7;
@@ -95,7 +95,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(105, 175);
+            this.btnRemove.Location = new System.Drawing.Point(111, 245);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(97, 23);
             this.btnRemove.TabIndex = 6;
@@ -105,7 +105,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // btnAddTab
             // 
-            this.btnAddTab.Location = new System.Drawing.Point(17, 175);
+            this.btnAddTab.Location = new System.Drawing.Point(18, 245);
             this.btnAddTab.Name = "btnAddTab";
             this.btnAddTab.Size = new System.Drawing.Size(91, 23);
             this.btnAddTab.TabIndex = 5;

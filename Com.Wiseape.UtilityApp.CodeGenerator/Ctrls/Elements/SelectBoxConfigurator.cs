@@ -31,7 +31,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             this.rdStatic.AutoSize = true;
             this.rdStatic.Checked = true;
-            this.rdStatic.Location = new System.Drawing.Point(13, 194);
+            this.rdStatic.Location = new System.Drawing.Point(13, 243);
             this.rdStatic.Name = "rdStatic";
             this.rdStatic.Size = new System.Drawing.Size(87, 17);
             this.rdStatic.TabIndex = 12;
@@ -43,7 +43,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // rdDynamic
             // 
             this.rdDynamic.AutoSize = true;
-            this.rdDynamic.Location = new System.Drawing.Point(125, 194);
+            this.rdDynamic.Location = new System.Drawing.Point(106, 243);
             this.rdDynamic.Name = "rdDynamic";
             this.rdDynamic.Size = new System.Drawing.Size(101, 17);
             this.rdDynamic.TabIndex = 13;
@@ -53,9 +53,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // pnlValues
             // 
-            this.pnlValues.Location = new System.Drawing.Point(3, 217);
+            this.pnlValues.Location = new System.Drawing.Point(13, 266);
             this.pnlValues.Name = "pnlValues";
-            this.pnlValues.Size = new System.Drawing.Size(799, 262);
+            this.pnlValues.Size = new System.Drawing.Size(799, 249);
             this.pnlValues.TabIndex = 14;
             // 
             // SelectBoxConfigurator
@@ -65,7 +65,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Controls.Add(this.rdDynamic);
             this.Controls.Add(this.rdStatic);
             this.Name = "SelectBoxConfigurator";
-            this.Size = new System.Drawing.Size(827, 503);
+            this.Size = new System.Drawing.Size(827, 528);
             this.Load += new System.EventHandler(this.SelectBoxConfigurator_Load);
             this.Controls.SetChildIndex(this.txtPlaceholder, 0);
             this.Controls.SetChildIndex(this.lblPlaceholder, 0);

@@ -122,9 +122,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.colColumnText,
             this.colField,
             this.colInputType});
-            this.grid.Location = new System.Drawing.Point(11, 268);
+            this.grid.Location = new System.Drawing.Point(11, 322);
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(802, 170);
+            this.grid.Size = new System.Drawing.Size(802, 116);
             this.grid.TabIndex = 12;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
@@ -157,7 +157,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkShowCheckboxes
             // 
             this.chkShowCheckboxes.AutoSize = true;
-            this.chkShowCheckboxes.Location = new System.Drawing.Point(18, 179);
+            this.chkShowCheckboxes.Location = new System.Drawing.Point(851, 322);
             this.chkShowCheckboxes.Name = "chkShowCheckboxes";
             this.chkShowCheckboxes.Size = new System.Drawing.Size(115, 17);
             this.chkShowCheckboxes.TabIndex = 13;
@@ -167,7 +167,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkShowSimpleSearch
             // 
             this.chkShowSimpleSearch.AutoSize = true;
-            this.chkShowSimpleSearch.Location = new System.Drawing.Point(150, 179);
+            this.chkShowSimpleSearch.Location = new System.Drawing.Point(851, 345);
             this.chkShowSimpleSearch.Name = "chkShowSimpleSearch";
             this.chkShowSimpleSearch.Size = new System.Drawing.Size(124, 17);
             this.chkShowSimpleSearch.TabIndex = 14;
@@ -177,7 +177,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkShowAdvanceSearch
             // 
             this.chkShowAdvanceSearch.AutoSize = true;
-            this.chkShowAdvanceSearch.Location = new System.Drawing.Point(288, 179);
+            this.chkShowAdvanceSearch.Location = new System.Drawing.Point(851, 368);
             this.chkShowAdvanceSearch.Name = "chkShowAdvanceSearch";
             this.chkShowAdvanceSearch.Size = new System.Drawing.Size(136, 17);
             this.chkShowAdvanceSearch.TabIndex = 15;
@@ -187,7 +187,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkShowExport
             // 
             this.chkShowExport.AutoSize = true;
-            this.chkShowExport.Location = new System.Drawing.Point(430, 179);
+            this.chkShowExport.Location = new System.Drawing.Point(851, 391);
             this.chkShowExport.Name = "chkShowExport";
             this.chkShowExport.Size = new System.Drawing.Size(86, 17);
             this.chkShowExport.TabIndex = 16;
@@ -197,7 +197,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkShowSummary
             // 
             this.chkShowSummary.AutoSize = true;
-            this.chkShowSummary.Location = new System.Drawing.Point(529, 179);
+            this.chkShowSummary.Location = new System.Drawing.Point(851, 414);
             this.chkShowSummary.Name = "chkShowSummary";
             this.chkShowSummary.Size = new System.Drawing.Size(99, 17);
             this.chkShowSummary.TabIndex = 17;
@@ -206,7 +206,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // btnAddColumn
             // 
-            this.btnAddColumn.Location = new System.Drawing.Point(11, 239);
+            this.btnAddColumn.Location = new System.Drawing.Point(11, 293);
             this.btnAddColumn.Name = "btnAddColumn";
             this.btnAddColumn.Size = new System.Drawing.Size(87, 23);
             this.btnAddColumn.TabIndex = 18;
@@ -216,7 +216,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // btnDeleteColumn
             // 
-            this.btnDeleteColumn.Location = new System.Drawing.Point(98, 239);
+            this.btnDeleteColumn.Location = new System.Drawing.Point(98, 293);
             this.btnDeleteColumn.Name = "btnDeleteColumn";
             this.btnDeleteColumn.Size = new System.Drawing.Size(101, 23);
             this.btnDeleteColumn.TabIndex = 20;
@@ -227,7 +227,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 207);
+            this.label7.Location = new System.Drawing.Point(13, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 21;
@@ -235,7 +235,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // txtDatasourceInfo
             // 
-            this.txtDatasourceInfo.Location = new System.Drawing.Point(108, 203);
+            this.txtDatasourceInfo.Location = new System.Drawing.Point(16, 258);
             this.txtDatasourceInfo.Name = "txtDatasourceInfo";
             this.txtDatasourceInfo.Size = new System.Drawing.Size(619, 20);
             this.txtDatasourceInfo.TabIndex = 22;
@@ -299,7 +299,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // btnTryRetrieve
             // 
-            this.btnTryRetrieve.Location = new System.Drawing.Point(734, 201);
+            this.btnTryRetrieve.Location = new System.Drawing.Point(641, 258);
             this.btnTryRetrieve.Name = "btnTryRetrieve";
             this.btnTryRetrieve.Size = new System.Drawing.Size(75, 23);
             this.btnTryRetrieve.TabIndex = 27;
@@ -310,7 +310,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkSortable
             // 
             this.chkSortable.AutoSize = true;
-            this.chkSortable.Location = new System.Drawing.Point(645, 178);
+            this.chkSortable.Location = new System.Drawing.Point(851, 437);
             this.chkSortable.Name = "chkSortable";
             this.chkSortable.Size = new System.Drawing.Size(65, 17);
             this.chkSortable.TabIndex = 28;
@@ -336,7 +336,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Controls.Add(this.chkShowCheckboxes);
             this.Controls.Add(this.grid);
             this.Name = "GridConfigurator";
-            this.Size = new System.Drawing.Size(827, 577);
+            this.Size = new System.Drawing.Size(1000, 577);
             this.Load += new System.EventHandler(this.GridConfigurator_Load);
             this.Controls.SetChildIndex(this.txtPlaceholder, 0);
             this.Controls.SetChildIndex(this.lblPlaceholder, 0);

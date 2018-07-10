@@ -25,7 +25,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // chkHtml
             // 
             this.chkHtml.AutoSize = true;
-            this.chkHtml.Location = new System.Drawing.Point(16, 185);
+            this.chkHtml.Location = new System.Drawing.Point(17, 250);
             this.chkHtml.Name = "chkHtml";
             this.chkHtml.Size = new System.Drawing.Size(67, 17);
             this.chkHtml.TabIndex = 16;
@@ -37,7 +37,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.chkHtml);
             this.Name = "TextAreaConfigurator";
-            this.Size = new System.Drawing.Size(827, 226);
+            this.Size = new System.Drawing.Size(827, 287);
             this.Load += new System.EventHandler(this.TextboxDesigner_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);

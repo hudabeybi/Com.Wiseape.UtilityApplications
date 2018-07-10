@@ -1,6 +1,7 @@
 ﻿using Com.Wiseape.UtilityApp.CodeGenerator.Ctrls;
 using Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements;
 using Com.Wiseape.UtilityApp.CodeGenerator.Model;
+using Com.Wiseape.UtilityApp.CodeGenerator.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,13 +46,21 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
             set
             {
                 currentModule = value;
-                if (currentModule.ElementLayoutDesigner == null)
-                    currentModule.ElementLayoutDesigner = this.elementLayoutDesigner1;
-                if(currentModule.UIObjects == null || (currentModule.UIObjects != null && currentModule.UIObjects.Count == 0))
-                    UITable = (DataSourceUITable)currentModule.ModelType.Datasource;
+
+                if (UIType == GenerateUIType.Form)
+                {
+                    if (currentModule.ElementLayoutDesigner == null)
+                        currentModule.ElementLayoutDesigner = this.elementLayoutDesigner1;
+                    if (currentModule.UIObjects == null || (currentModule.UIObjects != null && currentModule.UIObjects.Count == 0))
+                        UITable = (DataSourceUITable)currentModule.ModelType.Datasource;
+                    else
+                    {
+                        this.elementLayoutDesigner1.TableRows = currentModule.UIObjects;
+                    }
+                }
                 else
                 {
-                    this.elementLayoutDesigner1.TableRows = currentModule.UIObjects;
+                    UITable = (DataSourceUITable)currentModule.ModelType.Datasource;
                 }
             }
         }
@@ -61,7 +70,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
         public FormVisualDesigner()
         {
             InitializeComponent();
-            UIType = GenerateUIType.Form;
+            //UIType = GenerateUIType.Form;
         }
 
         private void FormVisualDesigner_Load(object sender, EventArgs e)
@@ -153,7 +162,11 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
             }
 
             ctrl.Properties["GridColumns"] = columns;
-
+            if(this.currentModule != null)
+            {
+                ctrl.Properties["ID"] = "grid" + this.currentModule.ModuleName;
+                ctrl.Properties["Label"] = "List of " + this.currentModule.ModuleName;
+            }
             return ctrl;
         }
 
@@ -336,6 +349,47 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
                 CurrentModule.ElementLayoutDesigner = this.elementLayoutDesigner1;
                 List<TableRowObject> rows = CurrentModule.ElementLayoutDesigner.TableRows;
             }
+        }
+
+        private void btnAddDefaultSaveClose_Click(object sender, EventArgs e)
+        {
+            AddDefaultSaveAndClose();
+        }
+
+        void AddDefaultSaveAndClose()
+        {
+            List<TableRowObject> rows = this.elementLayoutDesigner1.TableRows;
+
+            TableRowObject newRow = new TableRowObject();
+
+            List<TableCellObject> cells = new List<TableCellObject>();
+            TableCellObject cell = new TableCellObject();
+            cell.TableCellName = "cellBtnSave";
+
+            PropertyPage btnPage = new ButtonPropertyPage();
+            btnPage.Properties["ID"] = "btnSave";
+            btnPage.Properties["CssClass"] = "btn-save";
+            btnPage.Properties["OnClick"] = "btnSaveClick";
+            btnPage.Properties["Label"] = "Save";
+            cell.AddElementFromControl(btnPage);
+            cells.Add(cell);
+
+            cell = new TableCellObject();
+            cell.TableCellName = "cellBtnClose";
+
+            btnPage = new ButtonPropertyPage();
+            btnPage.Properties["ID"] = "btnClose";
+            btnPage.Properties["CssClass"] = "btn-close";
+            btnPage.Properties["OnClick"] = "btnCloseClick";
+            btnPage.Properties["Label"] = "Close";
+            cell.AddElementFromControl(btnPage);
+            cells.Add(cell);
+
+            newRow.TableCells = cells;
+
+            rows.Add(newRow);
+            this.elementLayoutDesigner1.TableRows = rows;
+
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Com.Wiseape.UtilityApp.CodeGenerator.Properties;
 
 namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
 {
@@ -37,8 +38,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             this.panel1.Width = this.Width - this.panel1.Left - 10;
             AddRow();
-            if (this.OnStateChanged != null)
-                this.OnStateChanged(this);
+
         }
 
         int top = 0;
@@ -60,6 +60,8 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             //RearrangeRows();
             
             row.BringToFront();
+            if (this.OnStateChanged != null)
+                this.OnStateChanged(this);
             return row;
         }
 
@@ -361,5 +363,12 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             MoveRowDown();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

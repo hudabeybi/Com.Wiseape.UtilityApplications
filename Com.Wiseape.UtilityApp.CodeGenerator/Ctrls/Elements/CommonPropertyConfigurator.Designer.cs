@@ -42,6 +42,11 @@
             this.txtDataField = new System.Windows.Forms.TextBox();
             this.lblPlaceholder = new System.Windows.Forms.Label();
             this.txtPlaceholder = new System.Windows.Forms.TextBox();
+            this.txtOnChangeHandler = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtOnClick = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -164,10 +169,57 @@
             this.txtPlaceholder.Size = new System.Drawing.Size(390, 20);
             this.txtPlaceholder.TabIndex = 12;
             // 
+            // txtOnChangeHandler
+            // 
+            this.txtOnChangeHandler.Location = new System.Drawing.Point(419, 217);
+            this.txtOnChangeHandler.Name = "txtOnChangeHandler";
+            this.txtOnChangeHandler.Size = new System.Drawing.Size(390, 20);
+            this.txtOnChangeHandler.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(417, 200);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "On Change Handler";
+            // 
+            // txtOnClick
+            // 
+            this.txtOnClick.Location = new System.Drawing.Point(16, 217);
+            this.txtOnClick.Name = "txtOnClick";
+            this.txtOnClick.Size = new System.Drawing.Size(390, 20);
+            this.txtOnClick.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 200);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "On Click Handler";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(14, 184);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Events";
+            // 
             // CommonPropertyConfigurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtOnChangeHandler);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtOnClick);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.lblPlaceholder);
             this.Controls.Add(this.txtPlaceholder);
             this.Controls.Add(this.label6);
@@ -183,7 +235,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CommonPropertyConfigurator";
-            this.Size = new System.Drawing.Size(827, 188);
+            this.Size = new System.Drawing.Size(827, 252);
             this.Load += new System.EventHandler(this.CommonPropertyControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,5 +258,10 @@
         public System.Windows.Forms.TextBox txtDataField;
         public System.Windows.Forms.Label lblPlaceholder;
         public System.Windows.Forms.TextBox txtPlaceholder;
+        private System.Windows.Forms.TextBox txtOnChangeHandler;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtOnClick;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -31,8 +31,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGenerateCode = new System.Windows.Forms.Button();
-            this.elementLayoutDesigner1 = new Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.ElementLayoutDesigner();
+            this.btnAddDefaultSaveClose = new System.Windows.Forms.Button();
             this.elementPadCtrl1 = new Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.ElementPadCtrl();
+            this.elementLayoutDesigner1 = new Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.ElementLayoutDesigner();
             this.SuspendLayout();
             // 
             // button1
@@ -57,7 +58,7 @@
             // 
             // btnGenerateCode
             // 
-            this.btnGenerateCode.Location = new System.Drawing.Point(14, 321);
+            this.btnGenerateCode.Location = new System.Drawing.Point(17, 531);
             this.btnGenerateCode.Name = "btnGenerateCode";
             this.btnGenerateCode.Size = new System.Drawing.Size(147, 23);
             this.btnGenerateCode.TabIndex = 4;
@@ -65,9 +66,27 @@
             this.btnGenerateCode.UseVisualStyleBackColor = true;
             this.btnGenerateCode.Click += new System.EventHandler(this.btnGenerateCode_Click);
             // 
+            // btnAddDefaultSaveClose
+            // 
+            this.btnAddDefaultSaveClose.Location = new System.Drawing.Point(17, 502);
+            this.btnAddDefaultSaveClose.Name = "btnAddDefaultSaveClose";
+            this.btnAddDefaultSaveClose.Size = new System.Drawing.Size(147, 23);
+            this.btnAddDefaultSaveClose.TabIndex = 5;
+            this.btnAddDefaultSaveClose.Text = "Add Save and Close";
+            this.btnAddDefaultSaveClose.UseVisualStyleBackColor = true;
+            this.btnAddDefaultSaveClose.Click += new System.EventHandler(this.btnAddDefaultSaveClose_Click);
+            // 
+            // elementPadCtrl1
+            // 
+            this.elementPadCtrl1.IndexesToShow = "0,1,2,3,4,5,6,7,8,9";
+            this.elementPadCtrl1.Location = new System.Drawing.Point(12, 13);
+            this.elementPadCtrl1.Name = "elementPadCtrl1";
+            this.elementPadCtrl1.Size = new System.Drawing.Size(150, 475);
+            this.elementPadCtrl1.TabIndex = 6;
+            this.elementPadCtrl1.OnClickEventHandler += new Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.ElementPadCtrl.OnClickDelegate(this.elementPadCtrl1_OnClickEventHandler);
+            // 
             // elementLayoutDesigner1
             // 
-            this.elementLayoutDesigner1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.elementLayoutDesigner1.Location = new System.Drawing.Point(170, 13);
             this.elementLayoutDesigner1.Name = "elementLayoutDesigner1";
             this.elementLayoutDesigner1.ShowButtons = true;
@@ -77,26 +96,17 @@
             this.elementLayoutDesigner1.OnStateChanged += new Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements.ElementLayoutDesigner.OnStateChangedDelegate(this.elementLayoutDesigner1_OnStateChanged);
             this.elementLayoutDesigner1.Load += new System.EventHandler(this.elementLayoutDesigner1_Load);
             // 
-            // elementPadCtrl1
-            // 
-            this.elementPadCtrl1.IndexesToShow = "0,1,2,3,4,5,6,7,8";
-            this.elementPadCtrl1.Location = new System.Drawing.Point(14, 13);
-            this.elementPadCtrl1.Name = "elementPadCtrl1";
-            this.elementPadCtrl1.Size = new System.Drawing.Size(150, 278);
-            this.elementPadCtrl1.TabIndex = 0;
-            this.elementPadCtrl1.OnClickEventHandler += new Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.ElementPadCtrl.OnClickDelegate(this.elementPadCtrl1_OnClickEventHandler);
-            this.elementPadCtrl1.Load += new System.EventHandler(this.elementPadCtrl1_Load_1);
-            // 
             // FormVisualDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 604);
+            this.Controls.Add(this.elementPadCtrl1);
+            this.Controls.Add(this.btnAddDefaultSaveClose);
             this.Controls.Add(this.btnGenerateCode);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.elementLayoutDesigner1);
-            this.Controls.Add(this.elementPadCtrl1);
             this.Name = "FormVisualDesigner";
             this.Text = "Form Visual Designer";
             this.Load += new System.EventHandler(this.FormVisualDesigner_Load);
@@ -107,10 +117,11 @@
 
         #endregion
 
-        private Ctrls.ElementPadCtrl elementPadCtrl1;
         private Ctrls.Elements.ElementLayoutDesigner elementLayoutDesigner1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnGenerateCode;
+        private System.Windows.Forms.Button btnAddDefaultSaveClose;
+        private Ctrls.ElementPadCtrl elementPadCtrl1;
     }
 }

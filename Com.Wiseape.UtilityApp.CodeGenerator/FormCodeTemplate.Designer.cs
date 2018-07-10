@@ -51,6 +51,8 @@
             this.pgBar = new System.Windows.Forms.ProgressBar();
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnLogs = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnPaste = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,7 +267,7 @@
             // 
             // pgBar
             // 
-            this.pgBar.Location = new System.Drawing.Point(29, 517);
+            this.pgBar.Location = new System.Drawing.Point(29, 523);
             this.pgBar.Name = "pgBar";
             this.pgBar.Size = new System.Drawing.Size(951, 23);
             this.pgBar.Step = 1;
@@ -282,7 +284,7 @@
             // 
             // btnLogs
             // 
-            this.btnLogs.Location = new System.Drawing.Point(986, 517);
+            this.btnLogs.Location = new System.Drawing.Point(986, 523);
             this.btnLogs.Name = "btnLogs";
             this.btnLogs.Size = new System.Drawing.Size(52, 23);
             this.btnLogs.TabIndex = 17;
@@ -290,11 +292,33 @@
             this.btnLogs.UseVisualStyleBackColor = true;
             this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
             // 
+            // btnCopy
+            // 
+            this.btnCopy.Location = new System.Drawing.Point(28, 489);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(75, 23);
+            this.btnCopy.TabIndex = 18;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // btnPaste
+            // 
+            this.btnPaste.Location = new System.Drawing.Point(103, 489);
+            this.btnPaste.Name = "btnPaste";
+            this.btnPaste.Size = new System.Drawing.Size(75, 23);
+            this.btnPaste.TabIndex = 19;
+            this.btnPaste.Text = "Paste";
+            this.btnPaste.UseVisualStyleBackColor = true;
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
+            // 
             // FormCodeTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 602);
+            this.Controls.Add(this.btnPaste);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnLogs);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pgBar);
@@ -348,5 +372,7 @@
         private System.Windows.Forms.ProgressBar pgBar;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Button btnLogs;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnPaste;
     }
 }

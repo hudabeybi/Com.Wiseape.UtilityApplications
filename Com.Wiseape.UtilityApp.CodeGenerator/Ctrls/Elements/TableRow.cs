@@ -55,7 +55,10 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
         {
             int totalCell = cellObjects.Count;
             AddTableCells(totalCell);
-
+            if(totalCell == 2)
+            {
+                string temp = "";
+            }
             if (totalCell > 0)
             {
                 for (int i = 0; i < totalCell; i++)

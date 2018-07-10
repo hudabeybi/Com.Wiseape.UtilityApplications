@@ -29,5 +29,8 @@
     <Setting Name="FILEUPLOAD" Type="System.String" Scope="User">
       <Value Profile="(Default)">FILEUPLOAD</Value>
     </Setting>
+    <Setting Name="BUTTON" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BUTTON</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

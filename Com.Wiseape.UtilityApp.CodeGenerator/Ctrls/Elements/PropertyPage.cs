@@ -41,6 +41,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Properties.Add("CssStyle", "");
             this.Properties.Add("CssClass", "");
             this.Properties.Add("Placeholder", "Please, enter " + this.Properties["Label"]);
+            this.Properties.Add("OnClick", "");
+            this.Properties.Add("OnChange", "");
+
         }
 
         public void ShowConfigurationWindow()

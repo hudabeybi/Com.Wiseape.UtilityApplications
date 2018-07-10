@@ -93,13 +93,15 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
             CodeTemplate tmp = null;
             foreach (CodeTemplate template in list)
             {
-                if (template.TemplateName.ToLower().Contains(name.ToLower()))
+                if (template.TemplateName.ToLower() == name.ToLower())
                 {
                     tmp = template;
+                    break;
                 }
             }
 
-            list.Remove(tmp);
+            if(tmp != null)
+                list.Remove(tmp);
             SaveCodeTemplateGroups((List<CodeTemplateGroup>)cmbTemplateGroup.DataSource);
         }
 
@@ -185,6 +187,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
                     UpdateCodeTemplate(codeTemplate, templateName);
 
                     DisplaySelectedTemplateGroup();
+                    this.dataGridView1.Refresh();
                 }
                    
 
@@ -246,6 +249,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
                 //this.dataGridView1.DataSource = new List<CodeTemplate>();
                 //this.dataGridView1.DataSource = null;
                 this.dataGridView1.DataSource = group.CodeTemplateList;
+                
             }
         }
 
@@ -539,6 +543,52 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator
             FormCodeResult result = new FormCodeResult();
             result.Result = String.Join("\r\n", infos.ToArray());
             result.Show();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            CopyCodeTemplates();
+        }
+
+        List<CodeTemplate> codeTemplatesCopied = new List<CodeTemplate>();
+        void CopyCodeTemplates()
+        {
+            codeTemplatesCopied.Clear();
+            List<CodeTemplate> list = GetSelectedTemplateGroup().CodeTemplateList;
+            foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
+            {
+                CodeTemplate tmp = (CodeTemplate)row.DataBoundItem;
+
+                CodeTemplate newTmp = new CodeTemplate();
+                newTmp.Checked = tmp.Checked;
+                newTmp.DefaultFilename = tmp.DefaultFilename;
+                newTmp.SavedPath = tmp.SavedPath;
+                newTmp.TemplateCode = tmp.TemplateCode;
+                newTmp.TemplateName = tmp.TemplateName;
+
+                newTmp.TemplateName = tmp.TemplateName + " Copy " + DateTime.Now.ToString();
+                codeTemplatesCopied.Add(newTmp);
+            }
+
+            codeTemplatesCopied.Reverse();
+        }
+
+        void PasteCodeTemplates()
+        {
+            int selectedIdx = cmbTemplateGroup.SelectedIndex;
+
+            List<CodeTemplate> list = GetSelectedTemplateGroup().CodeTemplateList;
+            list.AddRange(codeTemplatesCopied);
+            SaveCodeTemplateGroups((List<CodeTemplateGroup>)cmbTemplateGroup.DataSource);
+            LoadCmbTemplateGroups();
+            cmbTemplateGroup.SelectedIndex = selectedIdx;
+            DisplaySelectedTemplateGroup();
+
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            PasteCodeTemplates();
         }
     }
 }

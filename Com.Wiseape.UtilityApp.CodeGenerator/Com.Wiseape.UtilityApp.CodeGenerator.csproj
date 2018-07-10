@@ -236,11 +236,20 @@
     <Compile Include="Ctrls\Elements\FileUploadDrawer.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ctrls\Elements\ButtonConfigurator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ctrls\Elements\TextboxConfigurator.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ctrls\Elements\TextAreaDrawer.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\ButtonDrawer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrls\Elements\ButtonDrawer.Designer.cs">
+      <DependentUpon>ButtonDrawer.cs</DependentUpon>
     </Compile>
     <Compile Include="Ctrls\Elements\TextboxDrawer.cs">
       <SubType>UserControl</SubType>
@@ -249,6 +258,7 @@
       <DependentUpon>TextboxDrawer.cs</DependentUpon>
     </Compile>
     <Compile Include="Ctrls\Elements\TextareaPropertyPage.cs" />
+    <Compile Include="Ctrls\Elements\ButtonPropertyPage.cs" />
     <Compile Include="Ctrls\Elements\TextboxPropertyPage.cs" />
     <Compile Include="Ctrls\FileConfigurator.cs">
       <SubType>UserControl</SubType>
@@ -558,11 +568,17 @@
     <EmbeddedResource Include="Ctrls\Elements\FileUploadDrawer.resx">
       <DependentUpon>FileUploadDrawer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\ButtonConfigurator.resx">
+      <DependentUpon>ButtonConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\TextboxConfigurator.resx">
       <DependentUpon>TextboxConfigurator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\TextAreaDrawer.resx">
       <DependentUpon>TextAreaDrawer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ctrls\Elements\ButtonDrawer.resx">
+      <DependentUpon>ButtonDrawer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ctrls\Elements\TextboxDrawer.resx">
       <DependentUpon>TextboxDrawer.cs</DependentUpon>
@@ -751,6 +767,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\painting-palette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

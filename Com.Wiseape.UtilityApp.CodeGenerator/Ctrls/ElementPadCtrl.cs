@@ -25,7 +25,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public event OnClickDelegate OnClickEventHandler;
 
-        private string indexesToShow = "0,1,2,3,4,5,6,7";
+        private string indexesToShow = "0,1,2,3,4,5,6,7,8,9";
 
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
@@ -68,8 +68,10 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls
             pages.Add(new GridPropertyPage());
             pages.Add(new TabPagesPropertyPage());
             pages.Add(new FileUploadPropertyPage());
+            pages.Add(new ButtonPropertyPage());
 
             counters.Clear();
+            counters.Add(1);
             counters.Add(1);
             counters.Add(1);
             counters.Add(1);

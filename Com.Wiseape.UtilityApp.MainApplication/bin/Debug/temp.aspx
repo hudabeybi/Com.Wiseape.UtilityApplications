@@ -8,6 +8,6 @@
 	
 	string json = Com.Wiseape.Utility.Serializer.Json.Serialize(Module.UIObjects);
 	json = json.Replace("TableCells", "Cells");
-	json = json.Replace("TableName", "Name");
+	json = json.Replace("TableCellName", "Name");
 	me.say(json);
 %>

@@ -44,7 +44,8 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
                 page = new TextboxPropertyPage();
             else if (elemType == Settings.Default.FILEUPLOAD)
                 page = new FileUploadPropertyPage();
-
+            else if (elemType == Settings.Default.BUTTON)
+                page = new ButtonPropertyPage();
 
             return page;
         }

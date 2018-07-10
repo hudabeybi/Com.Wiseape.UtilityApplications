@@ -28,7 +28,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 191);
+            this.label7.Location = new System.Drawing.Point(17, 251);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 14;
@@ -36,7 +36,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             // 
             // txtUploadUrl
             // 
-            this.txtUploadUrl.Location = new System.Drawing.Point(20, 208);
+            this.txtUploadUrl.Location = new System.Drawing.Point(15, 267);
             this.txtUploadUrl.Name = "txtUploadUrl";
             this.txtUploadUrl.Size = new System.Drawing.Size(773, 20);
             this.txtUploadUrl.TabIndex = 15;
@@ -47,7 +47,7 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             this.Controls.Add(this.txtUploadUrl);
             this.Controls.Add(this.label7);
             this.Name = "FileUploadConfigurator";
-            this.Size = new System.Drawing.Size(827, 256);
+            this.Size = new System.Drawing.Size(827, 304);
             this.Load += new System.EventHandler(this.FileUploadConfigurator_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);

@@ -130,5 +130,17 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Properties {
                 this["FILEUPLOAD"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("BUTTON")]
+        public string BUTTON {
+            get {
+                return ((string)(this["BUTTON"]));
+            }
+            set {
+                this["BUTTON"] = value;
+            }
+        }
     }
 }

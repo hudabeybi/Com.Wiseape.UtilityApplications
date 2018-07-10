@@ -49,6 +49,8 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             properties["CssStyle"] = txtStyle.Text;
             properties["DataField"] = txtDataField.Text;
             properties["Placeholder"] = txtPlaceholder.Text;
+            properties["OnClick"] = txtOnClick.Text;
+            properties["OnChange"] = txtOnChangeHandler.Text;
 
         }
 
@@ -62,6 +64,9 @@ namespace Com.Wiseape.UtilityApp.CodeGenerator.Ctrls.Elements
             txtDataField.Text = properties["DataField"].ToString();
             txtPlaceholder.Text = properties["Placeholder"].ToString();
             txtLabel.Text = properties["Label"].ToString();
+
+            txtOnClick.Text = properties["OnClick"].ToString();
+            txtOnChangeHandler.Text = properties["OnChange"].ToString();
         }
 
         private void txtLabel_TextChanged(object sender, EventArgs e)
